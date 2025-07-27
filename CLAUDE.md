@@ -11,19 +11,25 @@
 - **[Changelog.md](./Changelog.md)** - Session tracking
 
 ## 🎯 Current Status
+**Foundation**: ✅ Complete (HTML + CSS + JavaScript)  
 **Content**: ✅ Assets in `/Content` folder  
-**Next**: HTML structure per ARCHITECTURE.md specifications
+**Next**: Content integration and video implementation
+
+## 🏗️ Development Progress
+- ✅ **Phase 1 Complete**: Foundation & Planning (Documentation + Content)
+- ✅ **Phase 2 Complete**: Core Development (HTML + CSS + JavaScript)  
+- 🔄 **Phase 3**: Content Integration & Testing (Next)
 
 ## 🤖 Agent Behavior
 **Role**: Guide user in creating their ultimate website using [nainoalanger.com](https://www.nainoalanger.com/) as reference  
 **Approach**: Documentation-driven automation with living progress updates  
 **Method**: Follow docs → Execute → Update docs → Track in changelog
 
-## 🔄 Git Automation Protocol
-**Auto-commit after**: Significant changes, end of session, milestone completion  
-**Commit format**: `🟦 improve: <description>` (using changelog emojis)  
-**Include**: Documentation, code, project files  
-**Exclude**: Large media files (Content/ folder), Screenshots/ folder
+## 🔄 Git Automation
+**GitHub**: [AaronFrancises/aaron-francis-portfolio](https://github.com/AaronFrancises/aaron-francis-portfolio)  
+**Auto-commit**: After major changes, end of session  
+**Format**: Use changelog emojis (`🟩 new:`, `🟦 improve:`, `🟥 fix:`, `🟪 refactor:`)  
+**Scope**: Code & docs only (excludes `/Content`, `/Screenshots`)
 
 ## 🚨 FILE CREATION PROTOCOL
 Before creating ANY file/folder:
@@ -31,12 +37,17 @@ Before creating ANY file/folder:
 - Follow existing patterns: Check where similar files live
 - Ask if unsure: Don't guess directory structure
 
+**Naming Conventions:**
+- **Folders**: PascalCase (`Content/`, `Docs/`, `Styles/`)
+- **Files**: kebab-case (`index.html`, `reset.css`, `main.js`)
+
+**Platform**: macOS (all commands, shortcuts, and scripts optimized for Mac)
+
 ## 🟪 CHANGELOG PROTOCOL
 After making changes, diligently update the changelog for your session, abiding by the rules below:
 
-## Commit & Changelog Standards
-**Message Format**: `🟦 improve: <description>`  
-**Available Emojis**: `🟩 new:`, `🟥 fix:`, `🟦 improve:`, `🟪 refactor:` 
+## Changelog Standards
+**Emojis**: `🟩 new:`, `🟦 improve:`, `🟥 fix:`, `🟪 refactor:` 
 
 ## Changelog Update Rules
 **CRITICAL - Changelog is PURELY ADDITIVE**:
