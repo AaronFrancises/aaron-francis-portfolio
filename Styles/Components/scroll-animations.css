@@ -1,0 +1,202 @@
+/* Scroll Animations - Aaron Francis Portfolio */
+
+/* Base state for elements that animate on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: var(--animation-delay, 0s);
+}
+
+/* Animated state when element enters viewport */
+.animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific animations for different elements */
+
+/* Section headers */
+.section-header.animate-on-scroll {
+    transform: translateY(50px);
+    transition-duration: 1s;
+}
+
+/* Portfolio items with stagger effect */
+.portfolio-item.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: var(--stagger-delay, 0s);
+}
+
+.portfolio-item.animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* About section animations */
+.about-content.animate-on-scroll {
+    transform: translateX(-40px);
+    transition-duration: 1s;
+}
+
+.about-media.animate-on-scroll {
+    transform: translateX(40px);
+    transition-duration: 1s;
+    transition-delay: 0.2s;
+}
+
+.about-content.animate-on-scroll.animate-in,
+.about-media.animate-on-scroll.animate-in {
+    transform: translateX(0);
+}
+
+/* Contact form animation */
+.contact-form.animate-on-scroll {
+    transform: translateY(40px);
+    transition-duration: 1s;
+}
+
+/* Text reveal animation for titles */
+.text-reveal {
+    overflow: hidden;
+    position: relative;
+}
+
+.text-reveal .text-reveal-inner {
+    display: inline-block;
+    transform: translateY(100%);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: var(--animation-delay, 0s);
+}
+
+.text-reveal.animate-in .text-reveal-inner {
+    transform: translateY(0);
+}
+
+/* Parallax effects */
+.parallax-element {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+/* Video loading animations */
+.video-container.animate-on-scroll {
+    transform: scale(0.9);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.video-container.animate-on-scroll.animate-in {
+    transform: scale(1);
+}
+
+/* Button animations */
+.btn.animate-on-scroll {
+    transform: translateY(20px);
+    transition-duration: 0.6s;
+    transition-delay: 0.3s;
+}
+
+/* Navigation fade in */
+.header {
+    transition: background-color 0.3s ease-out;
+}
+
+/* Hero content stagger animations */
+.hero-title.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.2s;
+}
+
+.hero-subtitle.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.4s;
+}
+
+.hero-description.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.6s;
+}
+
+.hero-actions.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.8s;
+}
+
+/* Smooth entrance for film grain effect */
+.film-grain-container {
+    opacity: 0;
+    animation: fadeInGrain 2s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInGrain {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover animations for portfolio items */
+.portfolio-item {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Loading state animations */
+.loading-animation {
+    opacity: 0;
+    animation: pulseIn 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseIn {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 0.7;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll,
+    .portfolio-item,
+    .text-reveal .text-reveal-inner,
+    .hero-title.animate-on-scroll,
+    .hero-subtitle.animate-on-scroll,
+    .hero-description.animate-on-scroll,
+    .hero-actions.animate-on-scroll {
+        transition: none;
+        animation: none;
+        transform: none;
+        opacity: 1;
+    }
+    
+    .film-grain-container {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* High performance animation settings */
+.animate-on-scroll,
+.parallax-element {
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform, opacity;
+}
+
+.animate-on-scroll.animate-in {
+    will-change: auto;
+}

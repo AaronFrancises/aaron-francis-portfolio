@@ -3,6 +3,8 @@ import { ready } from './utils/helpers.js';
 import Navigation from './modules/navigation.js';
 import Animations from './modules/animations.js';
 import Forms from './modules/forms.js';
+import VideoPlayer from './modules/video-player.js';
+import ScrollAnimations from './modules/scroll-animations.js';
 
 class App {
     constructor() {
@@ -29,6 +31,12 @@ class App {
             this.modules.navigation = new Navigation();
             this.modules.animations = new Animations();
             this.modules.forms = new Forms();
+            
+            // Initialize video players
+            this.initializeVideoPlayers();
+            
+            // Initialize scroll animations
+            this.modules.scrollAnimations = new ScrollAnimations();
             
             console.log('All modules initialized successfully');
         } catch (error) {
@@ -129,11 +137,45 @@ class App {
         }
     }
 
+    initializeVideoPlayers() {
+        // Initialize all video player containers
+        const videoContainers = document.querySelectorAll('[data-video-container]');
+        this.modules.videoPlayers = [];
+        
+        videoContainers.forEach(container => {
+            const options = this.getVideoPlayerOptions(container);
+            const player = new VideoPlayer(container, options);
+            this.modules.videoPlayers.push(player);
+        });
+    }
+    
+    getVideoPlayerOptions(container) {
+        const dataset = container.dataset;
+        return {
+            autoplay: dataset.autoplay === 'true',
+            muted: dataset.muted !== 'false', // Default to true
+            loop: dataset.loop === 'true',
+            controls: dataset.controls !== 'false', // Default to true
+            poster: dataset.poster || null,
+            sources: this.parseVideoSources(dataset.sources || '')
+        };
+    }
+    
+    parseVideoSources(sourcesString) {
+        if (!sourcesString) return [];
+        
+        try {
+            return JSON.parse(sourcesString);
+        } catch (error) {
+            console.error('Error parsing video sources:', error);
+            return [];
+        }
+    }
+
     initializeVideoPlaceholders(placeholders) {
-        // Future implementation for video players
+        // Legacy placeholder handling - kept for compatibility
         placeholders.forEach(placeholder => {
             placeholder.addEventListener('click', () => {
-                // This would be where actual video loading/playing logic goes
                 console.log('Video placeholder clicked - ready for video implementation');
             });
         });

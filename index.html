@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="Styles/main.css">
 </head>
 <body>
+    <!-- Film grain overlay effects -->
+    <div class="film-grain-container">
+        <div class="film-grain"></div>
+        <div class="film-grain-filter"></div>
+        <div class="scanlines"></div>
+        <div class="film-vignette"></div>
+    </div>
+    
     <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
@@ -31,15 +39,10 @@
                     <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
                 </ul>
                 <div class="nav-social">
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <span class="sr-only">LinkedIn</span>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <span class="sr-only">Instagram</span>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YouTube">
-                        <span class="sr-only">YouTube</span>
-                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">LINKEDIN</a>
+                    <a href="#" class="social-link" aria-label="Instagram">INSTAGRAM</a>
+                    <a href="#" class="social-link" aria-label="YouTube">YOUTUBE</a>
+                    <a href="#" class="social-link" aria-label="Showreel">LAYERS</a>
                 </div>
             </div>
         </nav>
@@ -59,9 +62,13 @@
                 </div>
             </div>
             <div class="hero-media">
-                <!-- Video will be added here -->
-                <div class="hero-video-placeholder">
-                    <p>Cinematic Showreel Coming Soon</p>
+                <div data-video-container 
+                     data-autoplay="false" 
+                     data-muted="true" 
+                     data-loop="true" 
+                     data-controls="true"
+                     data-poster="Content/Image1.png"
+                     data-sources='[{"src": "Content/Showreel.mov", "type": "video/quicktime"}, {"src": "Content/Aishowreel.mp4", "type": "video/mp4"}]'>
                 </div>
             </div>
         </section>
@@ -78,11 +85,20 @@
                     <!-- Cinematic Showreel -->
                     <article class="portfolio-item portfolio-item--featured">
                         <div class="portfolio-media">
-                            <div class="video-placeholder">
-                                <p>Cinematic Showreel</p>
+                            <div data-video-container 
+                                 data-autoplay="false" 
+                                 data-muted="true" 
+                                 data-loop="false" 
+                                 data-controls="true"
+                                 data-poster="Content/Image2.png"
+                                 data-sources='[{"src": "Content/Showreel.mov", "type": "video/quicktime"}, {"src": "Content/Aishowreel.mp4", "type": "video/mp4"}]'>
                             </div>
                         </div>
                         <div class="portfolio-content">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-role">DIRECTOR</span>
+                                <span class="portfolio-category">SHOWREEL</span>
+                            </div>
                             <h3 class="portfolio-title">Cinematic Showreel</h3>
                             <p class="portfolio-description">A cinematic showcase of my visual style, lighting, and camera work — highlighting creative direction and storytelling tone.</p>
                         </div>
@@ -91,37 +107,64 @@
                     <!-- Individual Projects -->
                     <article class="portfolio-item">
                         <div class="portfolio-media">
-                            <div class="video-placeholder">
-                                <p>Project 1</p>
+                            <div data-video-container 
+                                 data-autoplay="false" 
+                                 data-muted="true" 
+                                 data-loop="false" 
+                                 data-controls="true"
+                                 data-poster="Content/Image3.png"
+                                 data-sources='[{"src": "Content/DJ-mixing.mp4", "type": "video/mp4"}]'>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="portfolio-title">Commercial Project</h3>
-                            <p class="portfolio-description">Professional branded content collaboration</p>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-role">CINEMATOGRAPHER</span>
+                                <span class="portfolio-category">EVENT</span>
+                            </div>
+                            <h3 class="portfolio-title">DJ Performance</h3>
+                            <p class="portfolio-description">Dynamic event cinematography capturing energy and emotion</p>
                         </div>
                     </article>
 
                     <article class="portfolio-item">
                         <div class="portfolio-media">
-                            <div class="video-placeholder">
-                                <p>Project 2</p>
+                            <div data-video-container 
+                                 data-autoplay="false" 
+                                 data-muted="true" 
+                                 data-loop="false" 
+                                 data-controls="true"
+                                 data-poster="Content/Image4.png"
+                                 data-sources='[{"src": "Content/Girl-with-projector.mp4", "type": "video/mp4"}]'>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="portfolio-title">Music Video</h3>
-                            <p class="portfolio-description">Visual storytelling through music</p>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-role">CINEMATOGRAPHER</span>
+                                <span class="portfolio-category">PORTRAIT</span>
+                            </div>
+                            <h3 class="portfolio-title">Artistic Portrait</h3>
+                            <p class="portfolio-description">Creative lighting and projection techniques in portraiture</p>
                         </div>
                     </article>
 
                     <article class="portfolio-item">
                         <div class="portfolio-media">
-                            <div class="video-placeholder">
-                                <p>Project 3</p>
+                            <div data-video-container 
+                                 data-autoplay="false" 
+                                 data-muted="true" 
+                                 data-loop="false" 
+                                 data-controls="true"
+                                 data-poster="Content/Image5.png"
+                                 data-sources='[{"src": "Content/Telephone-box.mp4", "type": "video/mp4"}]'>
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h3 class="portfolio-title">Documentary Work</h3>
-                            <p class="portfolio-description">Authentic narrative cinematography</p>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-role">DIRECTOR</span>
+                                <span class="portfolio-category">NARRATIVE</span>
+                            </div>
+                            <h3 class="portfolio-title">Urban Narrative</h3>
+                            <p class="portfolio-description">Environmental storytelling with atmospheric cinematography</p>
                         </div>
                     </article>
                 </div>
@@ -148,9 +191,10 @@
                         </div>
                     </div>
                     <div class="about-media">
-                        <div class="about-image-placeholder">
-                            <p>Professional Photo</p>
-                        </div>
+                        <img src="Content/Picture-AaronFrancis.jpg" 
+                             alt="Aaron Francis, Cinematographer" 
+                             class="about-image"
+                             loading="lazy">
                     </div>
                 </div>
             </div>

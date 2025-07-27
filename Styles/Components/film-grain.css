@@ -1,0 +1,164 @@
+/* Film Grain Static Effect - Aaron Francis Portfolio */
+
+/* Base TV static noise - Layer 1 */
+.film-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: var(--grain-opacity);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><defs><filter id="staticNoise1"><feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="2" stitchTiles="stitch" seed="1"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0.4 0 0.3 0 0.5 0 0.25 0.35 0"/></feComponentTransfer></filter></defs><rect width="100%" height="100%" filter="url(%23staticNoise1)"/></svg>');
+    background-size: 600px 600px;
+    animation: tvStatic1 var(--static-flicker-speed) steps(8, end) infinite;
+}
+
+/* Secondary static layer - Layer 2 */
+.film-grain-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    opacity: var(--grain-filter-opacity);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><filter id="staticNoise2"><feTurbulence type="turbulence" baseFrequency="0.2" numOctaves="2" stitchTiles="stitch" seed="5"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0.3 0 0.25 0.4 0 0.28 0 0.35 0.2"/></feComponentTransfer></filter></defs><rect width="100%" height="100%" filter="url(%23staticNoise2)"/></svg>');
+    background-size: 500px 500px;
+    animation: tvStatic2 calc(var(--static-flicker-speed) * 1.3) steps(6, end) infinite;
+}
+
+/* Fine grain layer - Layer 3 */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 998;
+    opacity: var(--scanlines-opacity);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><filter id="staticNoise3"><feTurbulence type="fractalNoise" baseFrequency="0.25" numOctaves="2" stitchTiles="stitch" seed="10"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0.35 0 0.22 0.45 0 0.3 0"/></feComponentTransfer></filter></defs><rect width="100%" height="100%" filter="url(%23staticNoise3)"/></svg>');
+    background-size: 400px 400px;
+    animation: tvStatic3 calc(var(--static-flicker-speed) * 0.7) steps(10, end) infinite;
+}
+
+/* Subtle vignette effect */
+.film-vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 997;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 60%,
+        rgba(0, 0, 0, 0.05) 80%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+}
+
+/* Subtle breathing animations - gentle opacity and subtle movement */
+@keyframes staticBreath1 {
+    0% { 
+        opacity: var(--grain-opacity);
+        transform: translate(0, 0);
+    }
+    50% { 
+        opacity: calc(var(--grain-opacity) * 0.9);
+        transform: translate(1px, 1px);
+    }
+    100% { 
+        opacity: var(--grain-opacity);
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes staticBreath2 {
+    0% { 
+        opacity: var(--grain-filter-opacity);
+        transform: translate(0, 0);
+    }
+    50% { 
+        opacity: calc(var(--grain-filter-opacity) * 1.1);
+        transform: translate(-1px, 0.5px);
+    }
+    100% { 
+        opacity: var(--grain-filter-opacity);
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes staticBreath3 {
+    0% { 
+        opacity: var(--scanlines-opacity);
+        transform: translate(0, 0);
+    }
+    50% { 
+        opacity: calc(var(--scanlines-opacity) * 0.8);
+        transform: translate(0.5px, -1px);
+    }
+    100% { 
+        opacity: var(--scanlines-opacity);
+        transform: translate(0, 0);
+    }
+}
+
+/* Performance optimization for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .film-grain,
+    .film-grain-filter,
+    .scanlines {
+        animation: none;
+        filter: none;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .film-grain {
+        background-size: 400px 400px;
+    }
+    
+    .film-grain-filter {
+        background-size: 350px 350px;
+    }
+    
+    .scanlines {
+        background-size: 300px 300px;
+    }
+}
+
+/* High resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .film-grain {
+        background-size: 400px 400px;
+    }
+    
+    .film-grain-filter {
+        background-size: 350px 350px;
+    }
+    
+    .scanlines {
+        background-size: 250px 250px;
+    }
+}
+
+/* Subtle breathing effect for the entire grain system */
+.film-grain-container {
+    animation: breatheContainer 20s ease-in-out infinite;
+}
+
+@keyframes breatheContainer {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.98;
+    }
+}

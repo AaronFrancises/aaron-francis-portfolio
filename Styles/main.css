@@ -1,6 +1,7 @@
 /* Main CSS - Aaron Francis Cinematography Portfolio */
 
 /* Base Styles */
+@import url('./Base/config.css');
 @import url('./Base/variables.css');
 @import url('./Base/reset.css');
 @import url('./Base/typography.css');
@@ -14,6 +15,9 @@
 @import url('./Components/buttons.css');
 @import url('./Components/portfolio.css');
 @import url('./Components/forms.css');
+@import url('./Components/video-player.css');
+@import url('./Components/film-grain.css');
+@import url('./Components/scroll-animations.css');
 
 /* Utility Styles */
 @import url('./Utilities/accessibility.css');

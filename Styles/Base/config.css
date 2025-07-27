@@ -1,0 +1,122 @@
+/* Global Configuration - Aaron Francis Portfolio */
+/* Easy tuning parameters for visual effects and styling */
+
+:root {
+    /* === FILM GRAIN STATIC CONFIGURATION === */
+    --grain-opacity: 0.15;              /* Main static layer visibility (0-1) */
+    --grain-filter-opacity: 0.08;       /* Secondary static layer (0-1) */
+    --scanlines-opacity: 0.04;          /* Fine grain layer visibility (0-1) */
+    --vignette-opacity: 1;              /* Vignette effect (0-1) */
+    --static-flicker-speed: 0.3s;       /* Rapid TV static speed */
+    --static-movement-range: 12px;      /* Static position jump distance */
+    --static-intensity: 1;              /* Overall static intensity multiplier */
+    
+    /* === TYPOGRAPHY CONFIGURATION === */
+    --hero-title-size-min: 4rem;        /* Minimum hero title size */
+    --hero-title-size-max: 14rem;       /* Maximum hero title size */
+    --hero-title-weight: 100;           /* Font weight (100-900) */
+    --hero-title-spacing: -0.05em;      /* Letter spacing */
+    --hero-title-line-height: 0.8;      /* Line height */
+    --hero-title-word-spacing: 0.3em;   /* Word spacing */
+    
+    /* === ANIMATION CONFIGURATION === */
+    --scroll-animation-duration: 0.8s;  /* Scroll reveal speed */
+    --scroll-animation-delay: 0.1s;     /* Base delay between elements */
+    --stagger-multiplier: 0.15s;        /* Portfolio item stagger timing */
+    --hover-animation-speed: 0.4s;      /* Hover effect speed */
+    
+    /* === PORTFOLIO CONFIGURATION === */
+    --portfolio-hover-lift: -5px;       /* Hover lift amount */
+    --portfolio-scale-on-scroll: 0.95;  /* Initial scale for scroll animation */
+    --meta-tag-opacity: 0.8;           /* Role/category tag opacity */
+    
+    /* === NAVIGATION CONFIGURATION === */
+    --nav-social-spacing: var(--space-3); /* Social link padding */
+    --nav-border-opacity: 0.3;          /* Navigation border opacity */
+    --nav-background-blur: 10px;        /* Navigation backdrop blur */
+    
+    /* === VIDEO PLAYER CONFIGURATION === */
+    --video-overlay-opacity: 0.3;       /* Video overlay darkness */
+    --video-controls-fade-speed: 0.3s;  /* Controls fade timing */
+    --video-poster-opacity: 1;          /* Poster image opacity */
+    
+    /* === PERFORMANCE TOGGLES === */
+    --enable-grain-animation: 1;        /* 1 = on, 0 = off */
+    --enable-parallax: 1;               /* 1 = on, 0 = off */
+    --enable-hover-effects: 1;          /* 1 = on, 0 = off */
+    --enable-scroll-animations: 1;      /* 1 = on, 0 = off */
+    
+    /* === MOBILE ADJUSTMENTS === */
+    --mobile-grain-opacity-reduction: 0.5; /* Multiply grain opacity on mobile */
+    --mobile-animation-speed-multiplier: 0.7; /* Faster animations on mobile */
+    
+    /* === DEBUG MODE === */
+    --debug-mode: 0;                    /* 1 = show debug outlines, 0 = off */
+    --debug-color: rgba(255, 0, 0, 0.3); /* Debug outline color */
+}
+
+/* === QUICK PRESET CONFIGURATIONS === */
+
+/* Subtle Mode - Minimal static effects */
+.config-subtle {
+    --grain-opacity: 0.02;
+    --grain-filter-opacity: 0.01;
+    --scanlines-opacity: 0.005;
+    --static-flicker-speed: 2s;
+    --scroll-animation-duration: 0.5s;
+    --portfolio-hover-lift: -2px;
+}
+
+/* Dramatic Mode - Intense static effects */
+.config-dramatic {
+    --grain-opacity: 0.12;
+    --grain-filter-opacity: 0.08;
+    --scanlines-opacity: 0.04;
+    --static-flicker-speed: 0.2s;
+    --static-movement-range: 20px;
+    --hero-title-size-max: 16rem;
+    --hero-title-weight: 50;
+    --scroll-animation-duration: 1.2s;
+    --portfolio-hover-lift: -10px;
+}
+
+/* Performance Mode - Static disabled for slower devices */
+.config-performance {
+    --grain-opacity: 0.02;
+    --grain-filter-opacity: 0.01;
+    --scanlines-opacity: 0.005;
+    --static-flicker-speed: 3s;
+    --enable-grain-animation: 0;
+    --enable-parallax: 0;
+    --scroll-animation-duration: 0.3s;
+}
+
+/* Mobile Optimized */
+@media (max-width: 768px) {
+    :root {
+        --grain-opacity: calc(var(--grain-opacity) * var(--mobile-grain-opacity-reduction));
+        --grain-filter-opacity: calc(var(--grain-filter-opacity) * var(--mobile-grain-opacity-reduction));
+        --scroll-animation-duration: calc(var(--scroll-animation-duration) * var(--mobile-animation-speed-multiplier));
+        --hero-title-size-max: 8rem;
+    }
+}
+
+/* Debug Mode Styles */
+.debug-mode {
+    --debug-mode: 1;
+}
+
+[data-debug="true"] * {
+    outline: 1px solid var(--debug-color) !important;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --enable-grain-animation: 0;
+        --enable-parallax: 0;
+        --scroll-animation-duration: 0s;
+        --hover-animation-speed: 0s;
+        --grain-animation-speed: 0s;
+    }
+}
