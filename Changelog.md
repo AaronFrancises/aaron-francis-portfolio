@@ -9,6 +9,32 @@
 
 ---
 
+### Session 5
+🟥 fix: Restricted scanlines to black background areas only (resolved overlay issue)
+🟪 refactor: Moved scanlines from fixed overlays to body pseudo-elements for proper masking
+🟦 improve: Implemented mix-blend-mode: difference for automatic content masking
+🟦 improve: Increased scanline visibility (0.8, 0.25, 0.18 opacity) for better effect
+🟦 improve: Accelerated scanline movement (15s, 18s speeds) for more dynamic animation
+🟦 improve: Added proper z-index stacking (scanlines z:1-2, content z:10)
+🟥 fix: Eliminated scanlines appearing on grey panels and form elements
+🟦 improve: Enhanced content isolation with relative positioning and higher z-index
+🟪 refactor: Cleaned up deprecated fixed overlay approach in film-grain.css
+🟦 improve: Maintained mobile optimization and accessibility features
+
+**Completed This Session**:
+- **SCANLINE ISOLATION**: Successfully restricted scanlines to black background only
+- **BLEND MODE MASKING**: mix-blend-mode: difference automatically hides scanlines on grey content
+- **PROPER STACKING**: Content elements properly positioned above scanlines with z-index hierarchy
+- **ENHANCED VISIBILITY**: Increased opacity and speed for more pronounced background texture
+- **CLEAN ARCHITECTURE**: Moved from overlay approach to body pseudo-element implementation
+- **MOBILE READY**: Preserved responsive optimizations and reduced motion support
+
+**MAJOR MILESTONE**: Scanline Background Effect Perfected ✅
+**Visual Result**: Elegant vertical scanlines visible only in black background areas
+**Technical Achievement**: Proper CSS masking without JavaScript or complex solutions
+**Performance**: Lightweight body pseudo-element approach with hardware acceleration
+**Next Steps**: Final polish, performance review, and potential launch preparation
+
 ### Session 4
 🟦 improve: Replaced gentle film grain breathing with authentic TV static movement
 🟦 improve: Implemented rapid background-position shifts for realistic static behavior

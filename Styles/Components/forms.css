@@ -57,6 +57,9 @@
     border-radius: var(--border-radius);
     transition: all var(--duration-normal) var(--ease-out);
     font-family: var(--font-primary);
+    isolation: isolate;
+    position: relative;
+    z-index: 10;
 }
 
 .form-input:focus,

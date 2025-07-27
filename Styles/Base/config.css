@@ -3,9 +3,9 @@
 
 :root {
     /* === FILM GRAIN STATIC CONFIGURATION === */
-    --grain-opacity: 0.25;              /* Main static layer visibility (0-1) */
-    --grain-filter-opacity: 0.05;       /* Secondary static layer (0-1) */
-    --scanlines-opacity: 0.02;          /* Fine grain layer visibility (0-1) */
+    --grain-opacity: 0.8;               /* Main static layer visibility (0-1) */
+    --grain-filter-opacity: 0.25;       /* Secondary static layer (0-1) */
+    --scanlines-opacity: 0.18;          /* Fine grain layer visibility (0-1) */
     --vignette-opacity: 1;              /* Vignette effect (0-1) */
     --static-flicker-speed: 8s;       /* Smooth static drift speed */
     --static-movement-range: 40px;       /* Static position drift distance */

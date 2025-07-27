@@ -54,6 +54,9 @@
     overflow: hidden;
     transition: all var(--duration-cinematic) var(--ease-cinematic);
     cursor: pointer;
+    isolation: isolate;
+    position: relative;
+    z-index: 10;
 }
 
 .portfolio-item:hover {
