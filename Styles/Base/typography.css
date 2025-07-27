@@ -39,7 +39,7 @@ body::before {
         rgba(255, 255, 255, 0.05) 76px
     );
     background-size: 200px 100%;
-    animation: scanlineMove1 15s linear infinite;
+    animation: scanlineMove1 10s linear infinite;
     will-change: transform;
     mix-blend-mode: difference;
 }
@@ -70,7 +70,7 @@ body::after {
         rgba(255, 255, 255, 0.07) 99px
     );
     background-size: 300px 100%;
-    animation: scanlineMove2 18s linear infinite;
+    animation: scanlineMove2 12s linear infinite;
     will-change: transform;
     mix-blend-mode: difference;
 }

@@ -14,12 +14,14 @@
 🟪 refactor: Moved scanlines from fixed overlays to body pseudo-elements for proper masking
 🟦 improve: Implemented mix-blend-mode: difference for automatic content masking
 🟦 improve: Increased scanline visibility (0.8, 0.25, 0.18 opacity) for better effect
-🟦 improve: Accelerated scanline movement (15s, 18s speeds) for more dynamic animation
+🟦 improve: Accelerated scanline movement (15s→10s, 18s→12s speeds) for dynamic animation
 🟦 improve: Added proper z-index stacking (scanlines z:1-2, content z:10)
 🟥 fix: Eliminated scanlines appearing on grey panels and form elements
 🟦 improve: Enhanced content isolation with relative positioning and higher z-index
+🟦 improve: Added isolation to about-preview section to block scanlines properly
 🟪 refactor: Cleaned up deprecated fixed overlay approach in film-grain.css
 🟦 improve: Maintained mobile optimization and accessibility features
+🟥 fix: Removed experimental glitch effect on hero title (user preference)
 
 **Completed This Session**:
 - **SCANLINE ISOLATION**: Successfully restricted scanlines to black background only
