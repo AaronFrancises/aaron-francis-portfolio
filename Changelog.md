@@ -22,20 +22,29 @@
 🟪 refactor: Cleaned up deprecated fixed overlay approach in film-grain.css
 🟦 improve: Maintained mobile optimization and accessibility features
 🟥 fix: Removed experimental glitch effect on hero title (user preference)
+🟩 new: Added red accent scanline with single-line visibility control
+🟦 improve: Implemented comprehensive scanline configuration system
+🟦 improve: Added dedicated config variables for all scanline layers
+🟥 fix: Resolved red scanline visibility issue by removing mix-blend-mode conflict
+🟦 improve: Created centralized control for scanline opacity, speed, and spacing
+🟪 refactor: Migrated all scanlines to use config.css variables for easy tuning
 
 **Completed This Session**:
 - **SCANLINE ISOLATION**: Successfully restricted scanlines to black background only
 - **BLEND MODE MASKING**: mix-blend-mode: difference automatically hides scanlines on grey content
-- **PROPER STACKING**: Content elements properly positioned above scanlines with z-index hierarchy
+- **RED ACCENT SCANLINE**: Added single red scanline with configurable visibility and timing
+- **COMPREHENSIVE CONFIG**: Complete configuration system for all scanline layers
+- **CENTRALIZED CONTROL**: All scanline properties (opacity, speed, spacing) managed from config.css
 - **ENHANCED VISIBILITY**: Increased opacity and speed for more pronounced background texture
 - **CLEAN ARCHITECTURE**: Moved from overlay approach to body pseudo-element implementation
 - **MOBILE READY**: Preserved responsive optimizations and reduced motion support
 
-**MAJOR MILESTONE**: Scanline Background Effect Perfected ✅
-**Visual Result**: Elegant vertical scanlines visible only in black background areas
-**Technical Achievement**: Proper CSS masking without JavaScript or complex solutions
-**Performance**: Lightweight body pseudo-element approach with hardware acceleration
-**Next Steps**: Final polish, performance review, and potential launch preparation
+**MAJOR MILESTONE**: Advanced Scanline System Complete ✅
+**Visual Result**: Multi-layer white scanlines + red accent line with full configurability
+**Technical Achievement**: Comprehensive config system with centralized variable control
+**Performance**: Hardware-accelerated animations with mobile optimization
+**Configuration**: All scanline properties easily adjustable from single config file
+**Next Steps**: Final visual polish and user experience refinements
 
 ### Session 4
 🟦 improve: Replaced gentle film grain breathing with authentic TV static movement
