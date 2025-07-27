@@ -1,6 +1,7 @@
-/* Film Grain Static Effect - Aaron Francis Portfolio */
+/* Vertical Scanline Background Animation - Aaron Francis Portfolio */
+/* Minimalist, subtle vertical lines moving left to right */
 
-/* Base TV static noise - Layer 1 */
+/* === LAYER 1: FINE SCANLINES === */
 .film-grain {
     position: fixed;
     top: 0;
@@ -10,12 +11,27 @@
     pointer-events: none;
     z-index: 1000;
     opacity: var(--grain-opacity);
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><defs><filter id="staticNoise1"><feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="2" stitchTiles="stitch" seed="1"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0.4 0 0.3 0 0.5 0 0.25 0.35 0"/></feComponentTransfer></filter></defs><rect width="100%" height="100%" filter="url(%23staticNoise1)"/></svg>');
-    background-size: 600px 600px;
-    animation: tvStatic1 var(--static-flicker-speed) steps(8, end) infinite;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 24px,
+        rgba(255, 255, 255, 0.06) 25px,
+        rgba(255, 255, 255, 0.06) 26px,
+        transparent 27px,
+        transparent 49px,
+        rgba(255, 255, 255, 0.04) 50px,
+        rgba(255, 255, 255, 0.04) 51px,
+        transparent 52px,
+        transparent 74px,
+        rgba(255, 255, 255, 0.05) 75px,
+        rgba(255, 255, 255, 0.05) 76px
+    );
+    background-size: 200px 100%;
+    animation: scanlineMove1 20s linear infinite;
+    will-change: transform;
 }
 
-/* Secondary static layer - Layer 2 */
+/* === LAYER 2: MEDIUM SCANLINES === */
 .film-grain-filter {
     position: fixed;
     top: 0;
@@ -25,12 +41,27 @@
     pointer-events: none;
     z-index: 999;
     opacity: var(--grain-filter-opacity);
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><filter id="staticNoise2"><feTurbulence type="turbulence" baseFrequency="0.2" numOctaves="2" stitchTiles="stitch" seed="5"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0.3 0 0.25 0.4 0 0.28 0 0.35 0.2"/></feComponentTransfer></filter></defs><rect width="100%" height="100%" filter="url(%23staticNoise2)"/></svg>');
-    background-size: 500px 500px;
-    animation: tvStatic2 calc(var(--static-flicker-speed) * 1.3) steps(6, end) infinite;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 32px,
+        rgba(255, 255, 255, 0.08) 33px,
+        rgba(255, 255, 255, 0.08) 35px,
+        transparent 36px,
+        transparent 64px,
+        rgba(255, 255, 255, 0.06) 65px,
+        rgba(255, 255, 255, 0.06) 67px,
+        transparent 68px,
+        transparent 96px,
+        rgba(255, 255, 255, 0.07) 97px,
+        rgba(255, 255, 255, 0.07) 99px
+    );
+    background-size: 300px 100%;
+    animation: scanlineMove2 25s linear infinite;
+    will-change: transform;
 }
 
-/* Fine grain layer - Layer 3 */
+/* === LAYER 3: THICK SCANLINES === */
 .scanlines {
     position: fixed;
     top: 0;
@@ -40,12 +71,27 @@
     pointer-events: none;
     z-index: 998;
     opacity: var(--scanlines-opacity);
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><filter id="staticNoise3"><feTurbulence type="fractalNoise" baseFrequency="0.25" numOctaves="2" stitchTiles="stitch" seed="10"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0.35 0 0.22 0.45 0 0.3 0"/></feComponentTransfer></filter></defs><rect width="100%" height="100%" filter="url(%23staticNoise3)"/></svg>');
-    background-size: 400px 400px;
-    animation: tvStatic3 calc(var(--static-flicker-speed) * 0.7) steps(10, end) infinite;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 48px,
+        rgba(255, 255, 255, 0.1) 49px,
+        rgba(255, 255, 255, 0.1) 52px,
+        transparent 53px,
+        transparent 96px,
+        rgba(255, 255, 255, 0.08) 97px,
+        rgba(255, 255, 255, 0.08) 100px,
+        transparent 101px,
+        transparent 144px,
+        rgba(255, 255, 255, 0.09) 145px,
+        rgba(255, 255, 255, 0.09) 148px
+    );
+    background-size: 400px 100%;
+    animation: scanlineMove3 30s linear infinite;
+    will-change: transform;
 }
 
-/* Subtle vignette effect */
+/* === SUBTLE VIGNETTE (OPTIONAL) === */
 .film-vignette {
     position: fixed;
     top: 0;
@@ -57,108 +103,126 @@
     background: radial-gradient(
         ellipse at center,
         transparent 0%,
-        transparent 60%,
-        rgba(0, 0, 0, 0.05) 80%,
-        rgba(0, 0, 0, 0.15) 100%
+        transparent 70%,
+        rgba(0, 0, 0, 0.02) 85%,
+        rgba(0, 0, 0, 0.08) 100%
     );
 }
 
-/* Subtle breathing animations - gentle opacity and subtle movement */
-@keyframes staticBreath1 {
-    0% { 
-        opacity: var(--grain-opacity);
-        transform: translate(0, 0);
+/* === SMOOTH LEFT-TO-RIGHT ANIMATIONS === */
+@keyframes scanlineMove1 {
+    0% {
+        transform: translateX(-200px);
     }
-    50% { 
-        opacity: calc(var(--grain-opacity) * 0.9);
-        transform: translate(1px, 1px);
-    }
-    100% { 
-        opacity: var(--grain-opacity);
-        transform: translate(0, 0);
+    100% {
+        transform: translateX(0px);
     }
 }
 
-@keyframes staticBreath2 {
-    0% { 
-        opacity: var(--grain-filter-opacity);
-        transform: translate(0, 0);
+@keyframes scanlineMove2 {
+    0% {
+        transform: translateX(-300px);
     }
-    50% { 
-        opacity: calc(var(--grain-filter-opacity) * 1.1);
-        transform: translate(-1px, 0.5px);
-    }
-    100% { 
-        opacity: var(--grain-filter-opacity);
-        transform: translate(0, 0);
+    100% {
+        transform: translateX(0px);
     }
 }
 
-@keyframes staticBreath3 {
-    0% { 
-        opacity: var(--scanlines-opacity);
-        transform: translate(0, 0);
+@keyframes scanlineMove3 {
+    0% {
+        transform: translateX(-400px);
     }
-    50% { 
-        opacity: calc(var(--scanlines-opacity) * 0.8);
-        transform: translate(0.5px, -1px);
-    }
-    100% { 
-        opacity: var(--scanlines-opacity);
-        transform: translate(0, 0);
+    100% {
+        transform: translateX(0px);
     }
 }
 
-/* Performance optimization for reduced motion */
+/* === PERFORMANCE OPTIMIZATIONS === */
+
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
     .film-grain,
     .film-grain-filter,
     .scanlines {
         animation: none;
-        filter: none;
+        opacity: calc(var(--grain-opacity) * 0.3);
     }
 }
 
-/* Responsive adjustments */
+/* Mobile optimization - simpler gradients and slower speeds */
 @media (max-width: 768px) {
     .film-grain {
-        background-size: 400px 400px;
+        background: repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 30px,
+            rgba(255, 255, 255, 0.05) 31px,
+            rgba(255, 255, 255, 0.05) 32px,
+            transparent 33px,
+            transparent 60px,
+            rgba(255, 255, 255, 0.04) 61px,
+            rgba(255, 255, 255, 0.04) 62px
+        );
+        background-size: 150px 100%;
+        animation: scanlineMove1 25s linear infinite;
     }
     
     .film-grain-filter {
-        background-size: 350px 350px;
+        background: repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 40px,
+            rgba(255, 255, 255, 0.06) 41px,
+            rgba(255, 255, 255, 0.06) 43px,
+            transparent 44px,
+            transparent 80px,
+            rgba(255, 255, 255, 0.05) 81px,
+            rgba(255, 255, 255, 0.05) 83px
+        );
+        background-size: 200px 100%;
+        animation: scanlineMove2 30s linear infinite;
     }
     
     .scanlines {
-        background-size: 300px 300px;
+        background: repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 60px,
+            rgba(255, 255, 255, 0.07) 61px,
+            rgba(255, 255, 255, 0.07) 64px,
+            transparent 65px,
+            transparent 120px,
+            rgba(255, 255, 255, 0.06) 121px,
+            rgba(255, 255, 255, 0.06) 124px
+        );
+        background-size: 300px 100%;
+        animation: scanlineMove3 35s linear infinite;
     }
 }
 
-/* High resolution displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+/* High-performance mode for slower devices */
+@media (max-width: 480px) {
+    .film-grain-filter,
+    .scanlines {
+        display: none;
+    }
+    
     .film-grain {
-        background-size: 400px 400px;
-    }
-    
-    .film-grain-filter {
-        background-size: 350px 350px;
-    }
-    
-    .scanlines {
-        background-size: 250px 250px;
+        animation-duration: 30s;
+        opacity: calc(var(--grain-opacity) * 0.7);
     }
 }
 
-/* Subtle breathing effect for the entire grain system */
+/* Container breathing effect (very subtle) */
 .film-grain-container {
-    animation: breatheContainer 20s ease-in-out infinite;
+    animation: containerBreath 40s ease-in-out infinite;
 }
 
-@keyframes breatheContainer {
+@keyframes containerBreath {
     0%, 100% {
         opacity: 1;
     }
     50% {
-        opacity: 0.98;
+        opacity: 0.985;
     }
 }

@@ -41,7 +41,8 @@ Before creating ANY file/folder:
 - **Folders**: PascalCase (`Content/`, `Docs/`, `Styles/`)
 - **Files**: kebab-case (`index.html`, `reset.css`, `main.js`)
 
-**Platform**: macOS (all commands, shortcuts, and scripts optimized for Mac)
+**Platform**: macOS (all commands, shortcuts, and scripts optimized for Mac)  
+**Development**: VS Code with Live Server extension for testing
 
 ## 🟪 CHANGELOG PROTOCOL
 After making changes, diligently update the changelog for your session, abiding by the rules below:

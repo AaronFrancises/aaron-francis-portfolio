@@ -3,12 +3,12 @@
 
 :root {
     /* === FILM GRAIN STATIC CONFIGURATION === */
-    --grain-opacity: 0.15;              /* Main static layer visibility (0-1) */
-    --grain-filter-opacity: 0.08;       /* Secondary static layer (0-1) */
-    --scanlines-opacity: 0.04;          /* Fine grain layer visibility (0-1) */
+    --grain-opacity: 0.25;              /* Main static layer visibility (0-1) */
+    --grain-filter-opacity: 0.05;       /* Secondary static layer (0-1) */
+    --scanlines-opacity: 0.02;          /* Fine grain layer visibility (0-1) */
     --vignette-opacity: 1;              /* Vignette effect (0-1) */
-    --static-flicker-speed: 0.3s;       /* Rapid TV static speed */
-    --static-movement-range: 12px;      /* Static position jump distance */
+    --static-flicker-speed: 8s;       /* Smooth static drift speed */
+    --static-movement-range: 40px;       /* Static position drift distance */
     --static-intensity: 1;              /* Overall static intensity multiplier */
     
     /* === TYPOGRAPHY CONFIGURATION === */
@@ -72,8 +72,8 @@
     --grain-opacity: 0.12;
     --grain-filter-opacity: 0.08;
     --scanlines-opacity: 0.04;
-    --static-flicker-speed: 0.2s;
-    --static-movement-range: 20px;
+    --static-flicker-speed: 0.8s;
+    --static-movement-range: 8px;
     --hero-title-size-max: 16rem;
     --hero-title-weight: 50;
     --scroll-animation-duration: 1.2s;
@@ -85,7 +85,8 @@
     --grain-opacity: 0.02;
     --grain-filter-opacity: 0.01;
     --scanlines-opacity: 0.005;
-    --static-flicker-speed: 3s;
+    --static-flicker-speed: 2s;
+    --static-movement-range: 2px;
     --enable-grain-animation: 0;
     --enable-parallax: 0;
     --scroll-animation-duration: 0.3s;
@@ -97,6 +98,8 @@
         --grain-opacity: calc(var(--grain-opacity) * var(--mobile-grain-opacity-reduction));
         --grain-filter-opacity: calc(var(--grain-filter-opacity) * var(--mobile-grain-opacity-reduction));
         --scroll-animation-duration: calc(var(--scroll-animation-duration) * var(--mobile-animation-speed-multiplier));
+        --static-flicker-speed: 0.5s;
+        --static-movement-range: 6px;
         --hero-title-size-max: 8rem;
     }
 }
