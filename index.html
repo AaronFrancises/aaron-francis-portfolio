@@ -618,6 +618,269 @@
         <!-- Selected Work Section -->
         <section id="work" class="selected-work">
             
+            <!-- AI Video Showcase -->
+            <section class="ai-video-showcase">
+                <div class="ai-video-carousel-container">
+                    <div class="ai-video-carousel" id="ai-video-carousel">
+                        <!-- Video slides -->
+                        <div class="ai-video-slide active" data-video="trailer">
+                            <video controls muted loop playsinline preload="metadata">
+                                <source src="Content/Ai%20carousel/Trailer.mp4" type="video/mp4">
+                            </video>
+                            <div class="ai-video-overlay">
+                                <div class="ai-video-icon">🎬</div>
+                                <h2 class="ai-video-title">Trailer</h2>
+                                <p class="ai-video-description">Cutting-edge AI cinematography showcasing the future of filmmaking with advanced machine learning techniques.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-video-slide" data-video="abstract">
+                            <video controls muted loop playsinline preload="metadata">
+                                <source src="Content/Ai%20carousel/Abstract.mp4" type="video/mp4">
+                            </video>
+                            <div class="ai-video-overlay">
+                                <div class="ai-video-icon">🎬</div>
+                                <h2 class="ai-video-title">Abstract</h2>
+                                <p class="ai-video-description">Experimental visual narratives exploring the intersection of artificial intelligence and artistic expression.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-video-slide" data-video="brand">
+                            <video controls muted loop playsinline preload="metadata">
+                                <source src="Content/Ai%20carousel/Brand.mp4" type="video/mp4">
+                            </video>
+                            <div class="ai-video-overlay">
+                                <div class="ai-video-icon">🎬</div>
+                                <h2 class="ai-video-title">Brand</h2>
+                                <p class="ai-video-description">Innovative brand storytelling through AI-enhanced cinematography and visual effects.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-video-slide" data-video="narrative">
+                            <video controls muted loop playsinline preload="metadata">
+                                <source src="Content/Ai%20carousel/Narrative.mp4" type="video/mp4">
+                            </video>
+                            <div class="ai-video-overlay">
+                                <div class="ai-video-icon">🎬</div>
+                                <h2 class="ai-video-title">Narrative</h2>
+                                <p class="ai-video-description">Character-driven stories enhanced by AI-powered cinematography and post-production techniques.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-video-slide" data-video="showreel">
+                            <video controls muted loop playsinline preload="metadata">
+                                <source src="Content/Ai%20carousel/Showreel.mp4" type="video/mp4">
+                            </video>
+                            <div class="ai-video-overlay">
+                                <div class="ai-video-icon">🎬</div>
+                                <h2 class="ai-video-title">Showreel</h2>
+                                <p class="ai-video-description">A comprehensive showcase of AI-assisted cinematography work across various projects and styles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="ai-video-nav">
+                    <button class="ai-nav-btn active" data-video="trailer" onclick="console.log('Trailer clicked!'); switchAIVideo('trailer');">Trailer</button>
+                    <button class="ai-nav-btn" data-video="abstract" onclick="console.log('Abstract clicked!'); switchAIVideo('abstract');">Abstract</button>
+                    <button class="ai-nav-btn" data-video="brand" onclick="console.log('Brand clicked!'); switchAIVideo('brand');">Brand</button>
+                    <button class="ai-nav-btn" data-video="narrative" onclick="console.log('Narrative clicked!'); switchAIVideo('narrative');">Narrative</button>
+                    <button class="ai-nav-btn" data-video="showreel" onclick="console.log('Showreel clicked!'); switchAIVideo('showreel');">Showreel</button>
+                </nav>
+            </section>
+            
+            <script>
+            // Auto-scroll variables
+            let autoScrollTimer = null;
+            let currentSlideIndex = 0;
+            let isAnyVideoPlaying = false;
+            const videoTypes = ['trailer', 'abstract', 'brand', 'narrative', 'showreel'];
+            
+            // AI video carousel switching
+            function switchAIVideo(videoType) {
+                console.log('🎬 switchAIVideo called with:', videoType);
+                
+                const carousel = document.getElementById('ai-video-carousel');
+                const buttons = document.querySelectorAll('.ai-nav-btn');
+                const slides = document.querySelectorAll('.ai-video-slide');
+                
+                // Video type to index mapping
+                const videoIndex = {
+                    'trailer': 0,
+                    'abstract': 1,
+                    'brand': 2,
+                    'narrative': 3,
+                    'showreel': 4
+                };
+                
+                const slideIndex = videoIndex[videoType];
+                if (slideIndex === undefined) {
+                    console.error('No slide index for:', videoType);
+                    return;
+                }
+                
+                // Update active button
+                buttons.forEach(btn => {
+                    if (btn.dataset.video === videoType) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Update active slide
+                slides.forEach((slide, index) => {
+                    if (index === slideIndex) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                
+                // Move carousel
+                carousel.setAttribute('data-active', slideIndex);
+                
+                // Update current slide index
+                currentSlideIndex = slideIndex;
+                
+                console.log('✅ Carousel moved to slide:', slideIndex, videoType);
+                
+                // Update sliding underline
+                updateSlidingLine();
+                
+                // Reset auto-scroll when manually navigated
+                resetAutoScroll();
+            }
+            
+            // Animate sliding line to active button
+            function updateSlidingLine() {
+                const nav = document.querySelector('.ai-video-nav');
+                const activeBtn = document.querySelector('.ai-nav-btn.active');
+                
+                if (!nav || !activeBtn) return;
+                
+                // Get button position relative to nav
+                const navRect = nav.getBoundingClientRect();
+                const btnRect = activeBtn.getBoundingClientRect();
+                
+                // Calculate position and width
+                const leftPosition = btnRect.left - navRect.left;
+                const btnWidth = btnRect.width;
+                
+                // Apply to pseudo-element via CSS custom properties
+                nav.style.setProperty('--line-left', leftPosition + 'px');
+                nav.style.setProperty('--line-width', btnWidth + 'px');
+                
+                console.log('📏 Line moved to:', leftPosition + 'px', 'width:', btnWidth + 'px');
+            }
+            
+            // Auto-scroll functions
+            function startAutoScroll() {
+                if (autoScrollTimer || isAnyVideoPlaying) return;
+                
+                console.log('🔄 Starting auto-scroll');
+                autoScrollTimer = setInterval(() => {
+                    if (!isAnyVideoPlaying) {
+                        // Move to next slide
+                        currentSlideIndex = (currentSlideIndex + 1) % videoTypes.length;
+                        const nextVideoType = videoTypes[currentSlideIndex];
+                        
+                        console.log('⏭️ Auto-scrolling to:', nextVideoType);
+                        switchAIVideo(nextVideoType);
+                    }
+                }, 6000); // 6 seconds
+            }
+            
+            function stopAutoScroll() {
+                if (autoScrollTimer) {
+                    console.log('⏹️ Stopping auto-scroll');
+                    clearInterval(autoScrollTimer);
+                    autoScrollTimer = null;
+                }
+            }
+            
+            function resetAutoScroll() {
+                stopAutoScroll();
+                if (!isAnyVideoPlaying) {
+                    startAutoScroll();
+                }
+            }
+            
+            // Check if any video is playing
+            function checkVideoPlayingStatus() {
+                const allVideos = document.querySelectorAll('.ai-video-slide video');
+                let anyPlaying = false;
+                
+                allVideos.forEach(video => {
+                    if (!video.paused && !video.ended) {
+                        anyPlaying = true;
+                    }
+                });
+                
+                const wasPlaying = isAnyVideoPlaying;
+                isAnyVideoPlaying = anyPlaying;
+                
+                // Start/stop auto-scroll based on playing status
+                if (wasPlaying && !anyPlaying) {
+                    console.log('▶️ No videos playing - resuming auto-scroll');
+                    startAutoScroll();
+                } else if (!wasPlaying && anyPlaying) {
+                    console.log('⏸️ Video playing - pausing auto-scroll');
+                    stopAutoScroll();
+                }
+            }
+            
+            
+            // Initialize carousel
+            document.addEventListener('DOMContentLoaded', function() {
+                const carousel = document.getElementById('ai-video-carousel');
+                const allVideos = document.querySelectorAll('.ai-video-slide video');
+                
+                // Set initial carousel position
+                carousel.setAttribute('data-active', '0');
+                
+                // Add event listeners to all videos and slides
+                const allSlides = document.querySelectorAll('.ai-video-slide');
+                
+                allVideos.forEach((video, index) => {
+                    video.addEventListener('play', () => {
+                        console.log(`📺 Video ${index} started playing`);
+                        setTimeout(checkVideoPlayingStatus, 100);
+                    });
+                    
+                    video.addEventListener('pause', () => {
+                        console.log(`⏸️ Video ${index} paused`);
+                        setTimeout(checkVideoPlayingStatus, 100);
+                    });
+                    
+                    video.addEventListener('ended', () => {
+                        console.log(`🔚 Video ${index} ended`);
+                        setTimeout(checkVideoPlayingStatus, 100);
+                    });
+                });
+                
+                // Add click handlers to slides for direct navigation
+                allSlides.forEach((slide, index) => {
+                    slide.addEventListener('click', (e) => {
+                        // Only navigate if clicking on a non-active slide
+                        if (!slide.classList.contains('active')) {
+                            e.preventDefault();
+                            const videoType = videoTypes[index];
+                            console.log(`🖱️ Clicked adjacent video:`, videoType);
+                            switchAIVideo(videoType);
+                        }
+                    });
+                });
+                
+                // Initialize sliding line position
+                setTimeout(updateSlidingLine, 100);
+                
+                // Start auto-scroll
+                setTimeout(startAutoScroll, 2000); // Start after 2 seconds
+                
+                console.log('🎠 AI Video Carousel initialized with auto-scroll');
+            });
+            </script>
+            
             <!-- Showreel Section -->
             <div class="work-section">
                 <div class="container">
@@ -628,19 +891,7 @@
                         <source src="Content/Showreel.mp4" type="video/mp4">
                         <source src="Content/Showreel.mov" type="video/quicktime">
                         Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            
-            <!-- AI Showreel Section -->
-            <div class="work-section">
-                <div class="container">
-                    <h3 class="work-title">AI Showreel</h3>
-                </div>
-                <div class="work-video-container">
-                    <video controls muted loop playsinline preload="metadata" poster="Content/Thumbnails/Aithumbnail.png">
-                        <source src="Content/Aishowreel.mp4" type="video/mp4">
-                    </video>
+                    </source>
                 </div>
             </div>
         </section>

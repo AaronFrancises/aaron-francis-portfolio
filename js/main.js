@@ -5,6 +5,7 @@ import Animations from './modules/animations.js';
 import Forms from './modules/forms.js';
 import VideoPlayer from './modules/video-player.js';
 import ScrollAnimations from './modules/scroll-animations.js';
+import { initAIVideoShowcase } from './modules/ai-video-showcase.js';
 import { initCarousel } from './modules/carousel.js';
 import { initFloatingParticles } from './modules/floating-particles.js';
 
@@ -39,6 +40,9 @@ class App {
             
             // Initialize scroll animations
             this.modules.scrollAnimations = new ScrollAnimations();
+            
+            // Initialize AI Video Showcase
+            initAIVideoShowcase();
             
             // Initialize carousel
             this.modules.carousel = initCarousel();

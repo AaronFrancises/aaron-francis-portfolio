@@ -1,0 +1,185 @@
+/* AI Showcase Section - Reference Style */
+
+.ai-showcase-section {
+    margin-bottom: var(--space-12);
+    position: relative;
+    background: var(--color-background);
+    padding: var(--space-8) 0; /* Add vertical padding like reference */
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-showcase-container {
+    width: 100%;
+    max-width: 1400px; /* Limit width like reference */
+    margin: 0 auto; /* Center container */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main video display - proper aspect ratio like reference */
+.ai-showcase-video-container {
+    width: 100%;
+    aspect-ratio: 16/9; /* Fixed aspect ratio like reference */
+    position: relative;
+    overflow: hidden;
+    background: var(--color-gray-900);
+    border-radius: 8px; /* Subtle rounded corners like reference */
+}
+
+.ai-showcase-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Maintain aspect ratio like reference */
+    display: block;
+    background: #000; /* Black padding around video */
+}
+
+/* Video overlay content - positioned like reference */
+.ai-showcase-overlay {
+    position: absolute;
+    top: 50%;
+    left: var(--space-8);
+    transform: translateY(-50%);
+    max-width: 600px;
+    z-index: 2;
+    pointer-events: none; /* Ensure overlay doesn't block clicks */
+}
+
+.ai-showcase-title {
+    font-size: var(--text-6xl);
+    font-weight: 300;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 30px rgba(0, 0, 0, 0.8),
+        2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.ai-showcase-description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+    text-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.8),
+        1px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.ai-showcase-meta {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+    text-shadow: 
+        0 0 15px rgba(0, 0, 0, 0.7),
+        1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Navigation tabs exactly like BBC reference */
+.ai-showcase-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ai-nav-tab {
+    flex: 1;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px 16px;
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    position: relative;
+    outline: none;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    font-family: inherit;
+    user-select: none;
+    pointer-events: auto !important;
+    z-index: 999;
+}
+
+.ai-nav-tab:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ai-nav-tab.active {
+    color: rgba(255, 255, 255, 1);
+    border-bottom: 3px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+    .ai-showcase-section {
+        height: 80vh;
+    }
+    
+    .ai-showcase-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .ai-showcase-description {
+        font-size: var(--text-base);
+        max-width: 400px;
+    }
+    
+    .ai-showcase-overlay {
+        left: var(--space-4);
+        max-width: 500px;
+    }
+    
+    .ai-showcase-navigation {
+        height: 50px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .ai-nav-tab {
+        padding: 15px 12px;
+        font-size: 11px;
+        white-space: nowrap;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-showcase-section {
+        height: 70vh;
+    }
+    
+    .ai-showcase-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .ai-showcase-description {
+        font-size: var(--text-sm);
+        max-width: 300px;
+    }
+    
+    .ai-showcase-overlay {
+        left: var(--space-3);
+        max-width: 280px;
+    }
+    
+    .ai-nav-tab {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-2xs);
+        min-width: 70px;
+    }
+}

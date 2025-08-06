@@ -1,0 +1,299 @@
+/**
+ * AI Showcase Module  
+ * Simple tab-based switching with auto-advance functionality
+ */
+
+class AIShowcase {
+    constructor() {
+        this.video = document.getElementById('ai-showcase-video');
+        this.title = document.getElementById('ai-showcase-title');
+        this.description = document.getElementById('ai-showcase-description');
+        this.meta = document.getElementById('ai-showcase-meta');
+        this.tabs = document.querySelectorAll('.ai-nav-tab');
+        this.currentIndex = 0;
+        this.totalItems = this.tabs.length;
+        this.autoAdvanceTimer = null;
+        this.autoAdvanceDelay = 5000; // 5 seconds
+        this.isVideoPlaying = false;
+        
+        this.videoData = {
+            trailer: {
+                src: 'Content/Ai carousel/Aishowreel.mp4',
+                poster: 'Content/Thumbnails/Aithumbnail.png',
+                title: 'Trailer',
+                description: 'Cutting-edge AI cinematography showcasing the future of filmmaking with advanced machine learning techniques.',
+                meta: '2024 • Director/Cinematographer'
+            },
+            brand: {
+                src: 'Content/Ai carousel/Brand.mp4',
+                poster: 'Content/Ai carousel/Flowering.png',
+                title: 'Brand',
+                description: 'Innovative brand storytelling through AI-enhanced cinematography and visual effects.',
+                meta: '2024 • Director/Cinematographer'
+            },
+            abstract: {
+                src: 'Content/Ai carousel/Abstract.mp4',
+                poster: 'Content/Ai carousel/spacedship.png',
+                title: 'Abstract',
+                description: 'Experimental visual narratives exploring the intersection of artificial intelligence and artistic expression.',
+                meta: '2024 • Director/Cinematographer'
+            },
+            narrative: {
+                src: 'Content/Ai carousel/Narrative.mp4',
+                poster: 'Content/Ai carousel/man.png',
+                title: 'Narrative',
+                description: 'Character-driven stories enhanced by AI-powered cinematography and post-production techniques.',
+                meta: '2024 • Director/Cinematographer'
+            },
+            showreel: {
+                src: 'Content/Ai carousel/Showreel.mp4',
+                poster: 'Content/Ai carousel/pacey.png',
+                title: 'Showreel',
+                description: 'A comprehensive showcase of AI-assisted cinematography work across various projects and styles.',
+                meta: '2024 • Director/Cinematographer'
+            }
+        };
+        
+        this.init();
+    }
+
+    init() {
+        console.log('AI Showcase initializing...');
+        
+        if (!this.video) {
+            console.error('Video element not found');
+            return;
+        }
+        
+        if (!this.tabs.length) {
+            console.error('No tabs found');
+            return;
+        }
+        
+        // Simple, direct event binding
+        this.setupTabs();
+        this.bindVideoEvents();
+        this.startAutoAdvance();
+        
+        console.log('AI Showcase initialized with', this.tabs.length, 'tabs');
+    }
+    
+    setupTabs() {
+        this.tabs.forEach((tab, index) => {
+            // Remove any existing listeners
+            tab.replaceWith(tab.cloneNode(true));
+        });
+        
+        // Re-query tabs after cloning
+        this.tabs = document.querySelectorAll('.ai-nav-tab');
+        this.totalItems = this.tabs.length;
+        
+        // Add fresh event listeners
+        this.tabs.forEach((tab, index) => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Tab clicked:', index);
+                this.switchToTab(index);
+            });
+            
+            // Ensure cursor is pointer
+            tab.style.cursor = 'pointer';
+        });
+    }
+    
+    switchToTab(index) {
+        console.log('Switching to tab:', index);
+        
+        // Update active states
+        this.tabs.forEach((tab, i) => {
+            if (i === index) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+        
+        // Get category from data attribute
+        const activeTab = this.tabs[index];
+        const category = activeTab.dataset.category;
+        const data = this.videoData[category];
+        
+        if (!data) {
+            console.error('No data for category:', category);
+            return;
+        }
+        
+        // Update video
+        this.updateVideo(data);
+        
+        // Update text content
+        this.updateContent(data);
+        
+        // Reset auto-advance
+        this.currentIndex = index;
+        this.resetAutoAdvance();
+    }
+    
+    updateVideo(data) {
+        // Pause current video
+        this.video.pause();
+        
+        // Update source
+        const source = this.video.querySelector('source');
+        if (source && data.src) {
+            source.src = data.src;
+        }
+        
+        // Update poster
+        if (data.poster) {
+            this.video.poster = data.poster;
+        }
+        
+        // Reload video
+        this.video.load();
+    }
+    
+    updateContent(data) {
+        if (this.title) this.title.textContent = data.title;
+        if (this.description) this.description.textContent = data.description;
+        if (this.meta) this.meta.textContent = data.meta;
+    }
+
+    bindVideoEvents() {
+        // Video event listeners for auto-advance control
+        this.video.addEventListener('play', () => this.onVideoPlay());
+        this.video.addEventListener('pause', () => this.onVideoPause());
+        this.video.addEventListener('ended', () => this.onVideoPause());
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                this.previousSlide();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                this.nextSlide();
+            }
+        });
+    }
+
+    goToSlide(index) {
+        if (index === this.currentIndex) return;
+        
+        this.currentIndex = index;
+        this.updateTabStates();
+        this.updateContent();
+        this.resetAutoAdvance();
+        
+        console.log(`Switched to slide ${index}`);
+    }
+
+    nextSlide() {
+        const nextIndex = (this.currentIndex + 1) % this.totalItems;
+        this.switchToTab(nextIndex);
+    }
+
+    previousSlide() {
+        const prevIndex = (this.currentIndex - 1 + this.totalItems) % this.totalItems;
+        this.switchToTab(prevIndex);
+    }
+
+    updateTabStates() {
+        this.tabs.forEach((tab, index) => {
+            tab.classList.toggle('active', index === this.currentIndex);
+        });
+    }
+
+    updateContent() {
+        const activeTab = this.tabs[this.currentIndex];
+        const category = activeTab.dataset.category;
+        const data = this.videoData[category];
+        
+        if (!data) return;
+        
+        // Pause current video
+        this.video.pause();
+        
+        // Update video source
+        const source = this.video.querySelector('source');
+        if (source) {
+            source.src = data.src;
+        }
+        
+        if (data.poster) {
+            this.video.poster = data.poster;
+        }
+        
+        // Update text content
+        if (this.title) this.title.textContent = data.title;
+        if (this.description) this.description.textContent = data.description;
+        if (this.meta) this.meta.textContent = data.meta;
+        
+        // Load new video
+        this.video.load();
+    }
+
+    onVideoPlay() {
+        console.log('Video started playing - pausing auto-advance');
+        this.isVideoPlaying = true;
+        this.stopAutoAdvance();
+    }
+
+    onVideoPause() {
+        console.log('Video paused/ended - resuming auto-advance');
+        this.isVideoPlaying = false;
+        this.startAutoAdvance();
+    }
+
+    startAutoAdvance() {
+        if (this.autoAdvanceTimer || this.isVideoPlaying) return;
+        
+        this.autoAdvanceTimer = setInterval(() => {
+            if (!this.isVideoPlaying) {
+                console.log('Auto-advancing to next slide');
+                this.nextSlide();
+            }
+        }, this.autoAdvanceDelay);
+        
+        console.log('Auto-advance started');
+    }
+
+    stopAutoAdvance() {
+        if (this.autoAdvanceTimer) {
+            clearInterval(this.autoAdvanceTimer);
+            this.autoAdvanceTimer = null;
+        }
+    }
+
+    resetAutoAdvance() {
+        this.stopAutoAdvance();
+        if (!this.isVideoPlaying) {
+            this.startAutoAdvance();
+        }
+    }
+
+    // Method to add new videos dynamically
+    addVideo(category, videoData) {
+        if (!this.videoData[category]) return;
+        
+        this.videoData[category] = {
+            ...this.videoData[category],
+            ...videoData
+        };
+        
+        console.log(`Updated video for ${category}:`, videoData);
+    }
+
+    destroy() {
+        this.stopAutoAdvance();
+        console.log('AI Showcase destroyed');
+    }
+}
+
+// Global access for debugging
+if (typeof window !== 'undefined') {
+    window.AIShowcase = AIShowcase;
+}
+
+export default AIShowcase;

@@ -62,22 +62,183 @@
 }
 
 
-/* Distant Background Carousel - Diagonal strip in distance - longer and shifted left */
+
+
+/* Distant Background Carousel - Much further away but still long */
 .hero-distant-carousel {
     position: absolute;
-    top: 20%;
-    left: -5%;
+    top: 15%;
+    left: -40%;
     width: 180vw;
-    height: 6vh;
-    transform: rotateZ(25deg) rotateY(-45deg) rotateX(20deg) scale(0.35);
-    transform-origin: center;
+    height: 20vh;
+    transform: scale(0.25);
     z-index: -2;
-    opacity: 0.35;
-    filter: blur(0.8px) brightness(0.75);
+    opacity: 0.3;
+    filter: blur(1.5px) brightness(0.6);
     border-radius: 0;
-    overflow: hidden;
-    perspective: 2000px;
+    overflow: visible;
 }
+
+/* Distant carousel styling - extended visibility on sides */
+.hero-distant-carousel .carousel-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background: transparent;
+    margin-top: 0;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    /* Much more visible on left and right sides */
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 2%,
+        rgba(0, 0, 0, 0.6) 8%,
+        rgba(0, 0, 0, 1) 15%,
+        rgba(0, 0, 0, 1) 85%,
+        rgba(0, 0, 0, 0.6) 92%,
+        rgba(0, 0, 0, 0.2) 98%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 2%,
+        rgba(0, 0, 0, 0.6) 8%,
+        rgba(0, 0, 0, 1) 15%,
+        rgba(0, 0, 0, 1) 85%,
+        rgba(0, 0, 0, 0.6) 92%,
+        rgba(0, 0, 0, 0.2) 98%,
+        transparent 100%
+    );
+}
+
+/* Subtle vignette overlay for distant carousel */
+.hero-distant-carousel .carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 30%,
+        rgba(0, 0, 0, 0.1) 70%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Distant carousel track - scroll right, reverse direction */
+.hero-distant-carousel .carousel-track {
+    height: 100%;
+    animation: continuousScroll 80s linear infinite reverse;
+    width: 200%;
+}
+
+/* Distant carousel items - identical to foreground */
+.hero-distant-carousel .carousel-item {
+    height: 100%;
+    flex: 0 0 20vw;
+    margin-right: var(--space-4);
+    border-radius: 8px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+/* Distant carousel item styling identical to foreground */
+.hero-distant-carousel .carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+    border-radius: 8px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-distant-carousel .carousel-item video,
+.hero-distant-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Stagger distant carousel videos - all 27 videos with varied delays */
+.hero-distant-carousel .carousel-item:nth-child(1) video { animation-delay: -0.3s; }
+.hero-distant-carousel .carousel-item:nth-child(2) video { animation-delay: -1.7s; }
+.hero-distant-carousel .carousel-item:nth-child(3) video { animation-delay: -3.1s; }
+.hero-distant-carousel .carousel-item:nth-child(4) video { animation-delay: -4.6s; }
+.hero-distant-carousel .carousel-item:nth-child(5) video { animation-delay: -0.9s; }
+.hero-distant-carousel .carousel-item:nth-child(6) video { animation-delay: -2.4s; }
+.hero-distant-carousel .carousel-item:nth-child(7) video { animation-delay: -3.8s; }
+.hero-distant-carousel .carousel-item:nth-child(8) video { animation-delay: -1.2s; }
+.hero-distant-carousel .carousel-item:nth-child(9) video { animation-delay: -4.3s; }
+.hero-distant-carousel .carousel-item:nth-child(10) video { animation-delay: -0.6s; }
+.hero-distant-carousel .carousel-item:nth-child(11) video { animation-delay: -2.8s; }
+.hero-distant-carousel .carousel-item:nth-child(12) video { animation-delay: -4.1s; }
+.hero-distant-carousel .carousel-item:nth-child(13) video { animation-delay: -1.5s; }
+.hero-distant-carousel .carousel-item:nth-child(14) video { animation-delay: -3.4s; }
+.hero-distant-carousel .carousel-item:nth-child(15) video { animation-delay: -0.8s; }
+.hero-distant-carousel .carousel-item:nth-child(16) video { animation-delay: -2.2s; }
+.hero-distant-carousel .carousel-item:nth-child(17) video { animation-delay: -3.9s; }
+.hero-distant-carousel .carousel-item:nth-child(18) video { animation-delay: -1.1s; }
+.hero-distant-carousel .carousel-item:nth-child(19) video { animation-delay: -4.4s; }
+.hero-distant-carousel .carousel-item:nth-child(20) video { animation-delay: -0.4s; }
+.hero-distant-carousel .carousel-item:nth-child(21) video { animation-delay: -2.6s; }
+.hero-distant-carousel .carousel-item:nth-child(22) video { animation-delay: -3.7s; }
+.hero-distant-carousel .carousel-item:nth-child(23) video { animation-delay: -1.9s; }
+.hero-distant-carousel .carousel-item:nth-child(24) video { animation-delay: -4.2s; }
+.hero-distant-carousel .carousel-item:nth-child(25) video { animation-delay: -0.7s; }
+.hero-distant-carousel .carousel-item:nth-child(26) video { animation-delay: -2.3s; }
+.hero-distant-carousel .carousel-item:nth-child(27) video { animation-delay: -3.6s; }
+
+/* Duplicate videos also staggered */
+.hero-distant-carousel .carousel-item:nth-child(28) video { animation-delay: -1.4s; }
+.hero-distant-carousel .carousel-item:nth-child(29) video { animation-delay: -4.8s; }
+.hero-distant-carousel .carousel-item:nth-child(30) video { animation-delay: -0.2s; }
+.hero-distant-carousel .carousel-item:nth-child(31) video { animation-delay: -2.7s; }
+.hero-distant-carousel .carousel-item:nth-child(32) video { animation-delay: -3.5s; }
+.hero-distant-carousel .carousel-item:nth-child(33) video { animation-delay: -1.8s; }
+.hero-distant-carousel .carousel-item:nth-child(34) video { animation-delay: -4.1s; }
+.hero-distant-carousel .carousel-item:nth-child(35) video { animation-delay: -0.5s; }
+.hero-distant-carousel .carousel-item:nth-child(36) video { animation-delay: -2.9s; }
+.hero-distant-carousel .carousel-item:nth-child(37) video { animation-delay: -3.2s; }
+.hero-distant-carousel .carousel-item:nth-child(38) video { animation-delay: -1.6s; }
+.hero-distant-carousel .carousel-item:nth-child(39) video { animation-delay: -4.5s; }
+.hero-distant-carousel .carousel-item:nth-child(40) video { animation-delay: -0.1s; }
+.hero-distant-carousel .carousel-item:nth-child(41) video { animation-delay: -2.1s; }
+.hero-distant-carousel .carousel-item:nth-child(42) video { animation-delay: -3.3s; }
+.hero-distant-carousel .carousel-item:nth-child(43) video { animation-delay: -1.0s; }
+.hero-distant-carousel .carousel-item:nth-child(44) video { animation-delay: -4.7s; }
+.hero-distant-carousel .carousel-item:nth-child(45) video { animation-delay: -0.8s; }
+.hero-distant-carousel .carousel-item:nth-child(46) video { animation-delay: -2.5s; }
+.hero-distant-carousel .carousel-item:nth-child(47) video { animation-delay: -3.4s; }
+.hero-distant-carousel .carousel-item:nth-child(48) video { animation-delay: -1.3s; }
+.hero-distant-carousel .carousel-item:nth-child(49) video { animation-delay: -4.0s; }
+.hero-distant-carousel .carousel-item:nth-child(50) video { animation-delay: -0.6s; }
+.hero-distant-carousel .carousel-item:nth-child(51) video { animation-delay: -2.8s; }
+.hero-distant-carousel .carousel-item:nth-child(52) video { animation-delay: -3.1s; }
+.hero-distant-carousel .carousel-item:nth-child(53) video { animation-delay: -1.7s; }
+.hero-distant-carousel .carousel-item:nth-child(54) video { animation-delay: -4.6s; }
 
 /* Background Carousel - Floating Film Strip */
 .hero-background-carousel {
@@ -129,62 +290,6 @@
     }
 }
 
-/* Distant carousel styling */
-
-/* Distant carousel styling */
-.hero-distant-carousel .carousel-container {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    background: transparent;
-    margin-top: 0;
-    border: none;
-    overflow: hidden;
-    position: relative;
-    /* Extended visibility on both sides, more on the right */
-    mask-image: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(0, 0, 0, 0.4) 8%,
-        rgba(0, 0, 0, 0.8) 18%,
-        rgba(0, 0, 0, 1) 35%,
-        rgba(0, 0, 0, 1) 75%,
-        rgba(0, 0, 0, 0.6) 88%,
-        rgba(0, 0, 0, 0.2) 95%,
-        transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(0, 0, 0, 0.4) 8%,
-        rgba(0, 0, 0, 0.8) 18%,
-        rgba(0, 0, 0, 1) 35%,
-        rgba(0, 0, 0, 1) 75%,
-        rgba(0, 0, 0, 0.6) 88%,
-        rgba(0, 0, 0, 0.2) 95%,
-        transparent 100%
-    );
-}
-
-/* Depth of field overlay for distant carousel */
-.hero-distant-carousel .carousel-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-        ellipse 80% 60% at center,
-        transparent 20%,
-        rgba(0, 0, 0, 0.1) 40%,
-        rgba(0, 0, 0, 0.2) 60%,
-        rgba(0, 0, 0, 0.3) 80%,
-        rgba(0, 0, 0, 0.4) 100%
-    );
-    pointer-events: none;
-    z-index: 2;
-}
 
 .hero-background-carousel .carousel-container {
     width: 100%;
@@ -244,15 +349,6 @@
 }
 
 
-/* Distant carousel track - reverse direction (right to left) */
-.hero-distant-carousel .carousel-track {
-    height: 100%;
-    animation: continuousScroll 140s linear infinite reverse;
-    animation-delay: -70s; /* Start halfway through cycle to offset from main carousel */
-    /* Duplicate content for seamless looping */
-    width: 200%;
-    display: flex;
-}
 
 .hero-background-carousel .carousel-track {
     height: 100%;
@@ -261,29 +357,11 @@
     width: 200%;
 }
 
-/* Distant carousel items - smaller and more compressed */
-.hero-distant-carousel .carousel-item {
-    height: 100%;
-    flex: 0 0 12vw;
-    margin-right: var(--space-1);
-    border-radius: 2px;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    perspective: 800px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    position: relative;
-    aspect-ratio: 16/9;
-}
 
-.hero-distant-carousel .carousel-item video,
-.hero-distant-carousel .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 2px;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
+
+
+
+
 
 .hero-background-carousel .carousel-item {
     height: 100%;
@@ -326,26 +404,6 @@
     backface-visibility: hidden;
 }
 
-/* Stagger distant carousel videos differently - all 19 videos */
-.hero-distant-carousel .carousel-item:nth-child(1) video { animation-delay: -1s; }
-.hero-distant-carousel .carousel-item:nth-child(2) video { animation-delay: -2.5s; }
-.hero-distant-carousel .carousel-item:nth-child(3) video { animation-delay: -4s; }
-.hero-distant-carousel .carousel-item:nth-child(4) video { animation-delay: -0.7s; }
-.hero-distant-carousel .carousel-item:nth-child(5) video { animation-delay: -3.2s; }
-.hero-distant-carousel .carousel-item:nth-child(6) video { animation-delay: -1.8s; }
-.hero-distant-carousel .carousel-item:nth-child(7) video { animation-delay: -4.5s; }
-.hero-distant-carousel .carousel-item:nth-child(8) video { animation-delay: -2.1s; }
-.hero-distant-carousel .carousel-item:nth-child(9) video { animation-delay: -3.8s; }
-.hero-distant-carousel .carousel-item:nth-child(10) video { animation-delay: -0.4s; }
-.hero-distant-carousel .carousel-item:nth-child(11) video { animation-delay: -2.9s; }
-.hero-distant-carousel .carousel-item:nth-child(12) video { animation-delay: -4.2s; }
-.hero-distant-carousel .carousel-item:nth-child(13) video { animation-delay: -1.3s; }
-.hero-distant-carousel .carousel-item:nth-child(14) video { animation-delay: -3.6s; }
-.hero-distant-carousel .carousel-item:nth-child(15) video { animation-delay: -0.9s; }
-.hero-distant-carousel .carousel-item:nth-child(16) video { animation-delay: -2.4s; }
-.hero-distant-carousel .carousel-item:nth-child(17) video { animation-delay: -4.7s; }
-.hero-distant-carousel .carousel-item:nth-child(18) video { animation-delay: -1.6s; }
-.hero-distant-carousel .carousel-item:nth-child(19) video { animation-delay: -3.3s; }
 
 /* Stagger video start times to prevent synchronized looping */
 .hero-background-carousel .carousel-item:nth-child(1) video { animation-delay: -0s; }
