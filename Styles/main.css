@@ -14,9 +14,12 @@
 @import url('./Components/hero.css');
 @import url('./Components/buttons.css');
 @import url('./Components/portfolio.css');
+@import url('./Components/carousel.css');
+@import url('./Components/cinematic-frame.css');
 @import url('./Components/forms.css');
 @import url('./Components/video-player.css');
 @import url('./Components/film-grain.css');
+@import url('./Components/floating-particles.css');
 @import url('./Components/scroll-animations.css');
 
 /* Utility Styles */

@@ -9,6 +9,57 @@
 
 ---
 
+### Session 8
+🟦 improve: Enhanced atmospheric effects with more visible perspective overlay and rim lighting
+🟦 improve: Increased volumetric lighting ray intensity for better cinematic depth
+🟦 improve: Made distant diagonal carousel longer (140vw → 180vw) and repositioned left
+🟩 new: Experimented with transparent character animation using Waving man.mp4/gif
+🟥 fix: Reverted atmospheric effects to original subtle levels after user feedback
+🟪 refactor: Removed character animation entirely after testing - cleaner aesthetic preferred
+
+**Completed This Session:**
+- **ATMOSPHERIC REFINEMENT**: Fine-tuned all atmospheric effects for optimal visibility
+- **CAROUSEL ENHANCEMENT**: Extended distant carousel length and improved positioning
+- **CHARACTER ANIMATION EXPERIMENT**: Tested pop-up character with transparency techniques
+- **CLEAN REVERT**: Removed character animation for cleaner, more professional look
+- **BLEND MODE TESTING**: Explored various CSS techniques for video background removal
+
+**Current State**: Two-carousel infinite film vault with subtle atmospheric lighting
+**User Preference**: Minimalist approach without character distractions
+**Next Steps**: Continue refinement of core cinematic effects and performance optimization
+
+### Session 7
+🟩 new: Created animated triangle logo replacing "A" in "AFF" with smooth rotation and red pulse
+🟦 improve: Triangle transforms from upward "A" shape to sideways play button every 12s
+🟦 improve: Added natural letter spacing for triangle to integrate seamlessly with "FF"
+🟥 fix: Centered navigation menu perfectly using CSS grid layout instead of flexbox
+🟩 new: Added all 27 videos to main carousel with staggered timing to prevent sync issues
+🟦 improve: Increased carousel speed to 80s and enhanced visibility (0.75 opacity, less blur)
+🟩 new: Created dramatic distant diagonal carousel with 3D perspective and depth effects
+🟦 improve: Diagonal carousel runs top-left to bottom-right with reverse animation (right-to-left)
+🟩 new: Added 19 videos to distant carousel with different content from main carousel
+🟦 improve: Enhanced distant carousel with depth of field radial gradient overlay
+🟦 improve: Extended diagonal carousel visibility and positioning for optimal cinematic effect
+🟪 refactor: Removed "Selected Work" heading for cleaner minimal presentation
+🟦 improve: Redesigned showreel titles to be much more subtle and elegant
+🟩 new: Achieved "infinite film vault" aesthetic with multiple carousel layers at different depths
+
+**Next Steps:** Consider adding more atmospheric lighting effects, performance optimization for multiple video layers, or enhancement of other portfolio sections to match the cinematic aesthetic.
+
+### Session 6
+🟪 refactor: Completely removed scanline system for cleaner background
+🟩 new: Implemented floating particle/bokeh system with cinematic depth layers
+🟦 improve: Added three particle depth layers (close/sharp, mid/slight blur, far/heavy blur)
+🟩 new: Created prominent bokeh circles (40-160px) with upward drift animation
+🟥 fix: Resolved JavaScript module loading issues with inline implementation
+🟦 improve: Enhanced particle visibility and made them scroll-past instead of fixed
+🟪 refactor: Redesigned Selected Work section with full-width video displays
+🟩 new: Created two large video sections (Showreel + AI Showreel) at 70-90vh height
+🟩 new: Moved carousel behind hero section as floating film strip background
+🟦 improve: Added 3D dimensional effects to carousel items with shadows and gradients
+🟦 improve: Implemented seamless infinite looping for background carousel
+🟦 improve: Optimized carousel speed (40s) and size (25vh, 90% scale) for perfect balance
+
 ### Session 5
 🟥 fix: Restricted scanlines to black background areas only (resolved overlay issue)
 🟪 refactor: Moved scanlines from fixed overlays to body pseudo-elements for proper masking

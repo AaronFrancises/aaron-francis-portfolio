@@ -1,0 +1,288 @@
+/* Cinematic Frame Motif - Aaron Francis Portfolio */
+/* Reusable frame components inspired by film equipment aesthetics */
+/* Now with subtle cyan neon for professional cinema UI feel */
+
+:root {
+    /* Cinematic Soft White Colors - RGB values for rgba() usage */
+    --soft-white-rgb: 255, 255, 255;
+    --soft-white-warm-rgb: 255, 250, 245;
+    --soft-white-cool-rgb: 248, 250, 252;
+    
+    /* Soft White Opacity Levels */
+    --soft-subtle: 0.08;
+    --soft-medium: 0.15;
+    --soft-bright: 0.25;
+    --soft-glow: 0.4;
+}
+
+/* === CORNER BRACKETS === */
+.frame-brackets {
+    position: relative;
+}
+
+.frame-brackets::before,
+.frame-brackets::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Top-left and bottom-right corners */
+.frame-brackets::before {
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid rgba(var(--neon-cyan-rgb), var(--neon-bright));
+    border-left: 2px solid rgba(var(--neon-cyan-rgb), var(--neon-bright));
+    box-shadow: 
+        -1px -1px 0 rgba(var(--neon-cyan-rgb), var(--neon-subtle)),
+        inset 1px 1px 0 rgba(var(--neon-cyan-rgb), var(--neon-subtle)),
+        0 0 8px rgba(var(--neon-cyan-rgb), 0.3);
+}
+
+.frame-brackets::after {
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid rgba(var(--neon-cyan-rgb), var(--neon-bright));
+    border-right: 2px solid rgba(var(--neon-cyan-rgb), var(--neon-bright));
+    box-shadow: 
+        1px 1px 0 rgba(var(--neon-cyan-rgb), var(--neon-subtle)),
+        inset -1px -1px 0 rgba(var(--neon-cyan-rgb), var(--neon-subtle)),
+        0 0 8px rgba(var(--neon-cyan-rgb), 0.3);
+}
+
+/* Add additional corners with pseudo-elements on child */
+.frame-brackets > *:first-child::before,
+.frame-brackets > *:first-child::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Top-right corner */
+.frame-brackets > *:first-child::before {
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid rgba(var(--neon-cyan), var(--neon-bright));
+    border-right: 2px solid rgba(var(--neon-cyan), var(--neon-bright));
+    box-shadow: 
+        1px -1px 0 rgba(var(--neon-cyan), var(--neon-subtle)),
+        inset -1px 1px 0 rgba(var(--neon-cyan), var(--neon-subtle)),
+        0 0 8px rgba(var(--neon-cyan), 0.3);
+}
+
+/* Bottom-left corner */
+.frame-brackets > *:first-child::after {
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid rgba(var(--neon-cyan), var(--neon-bright));
+    border-left: 2px solid rgba(var(--neon-cyan), var(--neon-bright));
+    box-shadow: 
+        -1px 1px 0 rgba(var(--neon-cyan), var(--neon-subtle)),
+        inset 1px -1px 0 rgba(var(--neon-cyan), var(--neon-subtle)),
+        0 0 8px rgba(var(--neon-cyan), 0.3);
+}
+
+/* === TECHNICAL LINES === */
+.technical-lines {
+    position: relative;
+}
+
+.technical-lines::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 8px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(var(--neon-cyan-blue), var(--neon-medium)) 20%, 
+        rgba(var(--neon-cyan), var(--neon-bright)) 50%, 
+        rgba(var(--neon-cyan-blue), var(--neon-medium)) 80%, 
+        transparent 100%
+    );
+    transform: translateY(-50%);
+    box-shadow: 
+        0 -2px 0 rgba(var(--neon-cyan), var(--neon-subtle)),
+        0 2px 0 rgba(var(--neon-cyan), var(--neon-subtle)),
+        0 0 4px rgba(var(--neon-cyan), 0.4);
+}
+
+.technical-lines::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 8px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(var(--neon-cyan-blue), var(--neon-medium)) 20%, 
+        rgba(var(--neon-cyan), var(--neon-bright)) 50%, 
+        rgba(var(--neon-cyan-blue), var(--neon-medium)) 80%, 
+        transparent 100%
+    );
+    transform: translateY(-50%);
+    box-shadow: 
+        0 -2px 0 rgba(var(--neon-cyan), var(--neon-subtle)),
+        0 2px 0 rgba(var(--neon-cyan), var(--neon-subtle)),
+        0 0 4px rgba(var(--neon-cyan), 0.4);
+}
+
+/* === FILM PERFORATIONS === */
+.film-perforation {
+    position: relative;
+}
+
+.film-perforation::before,
+.film-perforation::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Top perforations */
+.film-perforation::before {
+    top: -3px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 8px,
+        rgba(255, 255, 255, 0.2) 8px,
+        rgba(255, 255, 255, 0.2) 10px,
+        transparent 10px,
+        transparent 18px
+    );
+}
+
+/* Bottom perforations */
+.film-perforation::after {
+    bottom: -3px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 8px,
+        rgba(255, 255, 255, 0.2) 8px,
+        rgba(255, 255, 255, 0.2) 10px,
+        transparent 10px,
+        transparent 18px
+    );
+}
+
+/* === COMPLETE CINEMATIC OUTLINE === */
+.cinematic-outline {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Combine all motifs */
+.cinematic-outline.frame-brackets.film-perforation {
+    /* Enhanced border for complete frame */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 0 30px rgba(255, 255, 255, 0.08),
+        0 0 60px rgba(255, 255, 255, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* === HOVER ANIMATIONS === */
+.frame-brackets:hover::before,
+.frame-brackets:hover::after,
+.frame-brackets:hover > *:first-child::before,
+.frame-brackets:hover > *:first-child::after {
+    border-color: rgba(255, 255, 255, 0.6);
+    transition: border-color var(--duration-normal) var(--ease-out);
+}
+
+.technical-lines:hover::before,
+.technical-lines:hover::after {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.5) 20%, 
+        rgba(255, 255, 255, 0.8) 50%, 
+        rgba(255, 255, 255, 0.5) 80%, 
+        transparent 100%
+    );
+    transition: background var(--duration-normal) var(--ease-out);
+}
+
+/* === BREATHING ANIMATION === */
+@keyframes frameBreathing {
+    0%, 100% {
+        opacity: 0.4;
+        filter: brightness(1);
+    }
+    50% {
+        opacity: 0.6;
+        filter: brightness(1.1);
+    }
+}
+
+.cinematic-outline.breathing {
+    animation: frameBreathing 4s ease-in-out infinite;
+}
+
+/* === RESPONSIVE BEHAVIOR === */
+@media (max-width: 768px) {
+    .frame-brackets::before,
+    .frame-brackets::after,
+    .frame-brackets > *:first-child::before,
+    .frame-brackets > *:first-child::after {
+        width: 15px;
+        height: 15px;
+        border-width: 1.5px;
+    }
+    
+    .technical-lines::before,
+    .technical-lines::after {
+        width: 6px;
+        left: -8px;
+        right: -8px;
+    }
+    
+    .film-perforation::before,
+    .film-perforation::after {
+        height: 1.5px;
+        background-size: 12px 1.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .frame-brackets::before,
+    .frame-brackets::after,
+    .frame-brackets > *:first-child::before,
+    .frame-brackets > *:first-child::after {
+        width: 12px;
+        height: 12px;
+        border-width: 1px;
+    }
+    
+    .technical-lines::before,
+    .technical-lines::after {
+        width: 4px;
+        left: -6px;
+        right: -6px;
+    }
+}

@@ -34,7 +34,10 @@
 .btn-primary:hover {
     background: transparent;
     color: var(--color-white);
-    border-color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.15),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 .btn-primary:active {
@@ -50,9 +53,12 @@
 }
 
 .btn-secondary:hover {
-    border-color: var(--color-white);
-    background: var(--color-white);
-    color: var(--color-black);
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-white);
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .btn-secondary:active {

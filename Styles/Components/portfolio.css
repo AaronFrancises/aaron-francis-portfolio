@@ -1,5 +1,174 @@
 /* Portfolio Components */
 
+/* Selected Work Section - Full-screen video displays */
+.selected-work {
+    padding: var(--space-16) 0 0 0;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.selected-work .section-header {
+    text-align: center;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-20);
+    position: relative;
+}
+
+/* Add subtle ambient lighting effect around section header */
+.selected-work .section-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 100px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.02) 0%,
+        rgba(255, 255, 255, 0.01) 50%,
+        transparent 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.work-section {
+    margin-bottom: var(--space-12);
+    position: relative;
+}
+
+/* Work metadata styling */
+.work-metadata {
+    text-align: center;
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.work-metadata span {
+    display: inline-block;
+    margin: 0 var(--space-3);
+    position: relative;
+}
+
+.work-metadata span:not(:last-child)::after {
+    content: '•';
+    position: absolute;
+    right: calc(var(--space-3) * -1);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.work-title {
+    font-size: var(--text-lg);
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: var(--space-6);
+    color: var(--color-text-secondary);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    opacity: 0.8;
+}
+
+/* Corner brackets removed for cleaner look */
+
+.work-video-container {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-gray-900);
+    margin-top: var(--space-6);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+}
+
+/* Add subtle connecting element between title and video */
+.work-section .container::after {
+    content: '';
+    position: absolute;
+    bottom: calc(var(--space-6) * -0.5);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%
+    );
+}
+
+/* Left/right fade to darkness for video containers */
+.work-video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.7) 8%,
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.7) 92%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+.work-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hide only the fullscreen button without affecting video display */
+.work-video-container video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+
+.work-video-container video::-webkit-media-controls-picture-in-picture-button {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .work-video-container {
+        height: 80vh;
+    }
+    
+    .work-title {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--space-8);
+    }
+}
+
+@media (min-width: 1280px) {
+    .work-video-container {
+        height: 90vh;
+    }
+    
+    .work-title {
+        font-size: var(--text-4xl);
+    }
+}
+
+/* Legacy Portfolio Preview Section */
 .portfolio-preview {
     padding: var(--space-section) 0;
     background: var(--color-background);
@@ -12,10 +181,51 @@
 
 .section-title {
     font-size: var(--text-4xl);
-    font-weight: 500;
-    line-height: 1.2;
-    margin-bottom: var(--space-4);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: var(--space-8);
     color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    padding: var(--space-6) 0;
+}
+
+/* Cinematic frame elements for main section title */
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.15) 20%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.15) 80%,
+        transparent 100%
+    );
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.15) 20%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.15) 80%,
+        transparent 100%
+    );
 }
 
 .section-subtitle {
@@ -47,6 +257,27 @@
     }
 }
 
+/* Featured Portfolio Grid - For Main/AI Portfolios */
+.portfolio-grid--featured {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .portfolio-grid--featured {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+    }
+}
+
+@media (min-width: 1280px) {
+    .portfolio-grid--featured {
+        gap: var(--space-20);
+    }
+}
+
 /* Portfolio Items */
 .portfolio-item {
     background: var(--color-surface);
@@ -72,6 +303,47 @@
 @media (min-width: 720px) {
     .portfolio-item--featured {
         grid-column: span 2;
+    }
+}
+
+/* Main and AI Portfolio Items */
+.portfolio-item--main,
+.portfolio-item--ai {
+    min-height: 500px;
+}
+
+@media (min-width: 768px) {
+    .portfolio-item--main,
+    .portfolio-item--ai {
+        min-height: 600px;
+    }
+}
+
+.portfolio-item--main .portfolio-content,
+.portfolio-item--ai .portfolio-content {
+    padding: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .portfolio-item--main .portfolio-content,
+    .portfolio-item--ai .portfolio-content {
+        padding: var(--space-10);
+    }
+}
+
+/* Portfolio Actions */
+.portfolio-actions {
+    margin-top: var(--space-6);
+}
+
+.portfolio-actions .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .portfolio-actions .btn {
+        width: auto;
     }
 }
 
@@ -238,6 +510,13 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     transition: transform var(--duration-normal) var(--ease-out);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+}
+
+/* Apply subtle cinematic frame to about image */
+.about-media {
+    position: relative;
 }
 
 .about-image:hover {
@@ -248,6 +527,41 @@
 @media (max-width: 719px) {
     .section-title {
         font-size: var(--text-3xl);
+        letter-spacing: 0.1em;
+        padding: var(--space-4) 0;
+    }
+    
+    .section-title::before,
+    .section-title::after {
+        width: 120px;
+    }
+    
+    .work-title {
+        font-size: var(--text-base);
+        letter-spacing: 0.12em;
+    }
+    
+    
+    .work-metadata {
+        font-size: var(--text-xs);
+        margin-bottom: var(--space-3);
+    }
+    
+    .work-metadata span {
+        margin: 0 var(--space-2);
+    }
+    
+    .work-section .container::after {
+        width: 40px;
+    }
+    
+    .selected-work .section-header {
+        margin-bottom: var(--space-16);
+    }
+    
+    .selected-work .section-header::before {
+        width: 300px;
+        height: 80px;
     }
     
     .portfolio-content {
@@ -260,5 +574,25 @@
     
     .about-bio p {
         font-size: var(--text-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .work-title {
+        font-size: var(--text-sm);
+    }
+    
+    .work-metadata span {
+        display: block;
+        margin: var(--space-1) 0;
+    }
+    
+    .work-metadata span:not(:last-child)::after {
+        display: none;
+    }
+    
+    .section-title::before,
+    .section-title::after {
+        width: 80px;
     }
 }

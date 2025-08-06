@@ -5,6 +5,8 @@ import Animations from './modules/animations.js';
 import Forms from './modules/forms.js';
 import VideoPlayer from './modules/video-player.js';
 import ScrollAnimations from './modules/scroll-animations.js';
+import { initCarousel } from './modules/carousel.js';
+import { initFloatingParticles } from './modules/floating-particles.js';
 
 class App {
     constructor() {
@@ -37,6 +39,12 @@ class App {
             
             // Initialize scroll animations
             this.modules.scrollAnimations = new ScrollAnimations();
+            
+            // Initialize carousel
+            this.modules.carousel = initCarousel();
+            
+            // Initialize floating particles
+            this.modules.floatingParticles = initFloatingParticles();
             
             console.log('All modules initialized successfully');
         } catch (error) {

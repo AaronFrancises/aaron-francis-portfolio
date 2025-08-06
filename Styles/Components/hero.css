@@ -1,14 +1,397 @@
 /* Hero Section */
 
 .hero {
-    min-height: 100vh;
+    min-height: 120vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     padding-top: var(--space-20);
-    padding-bottom: var(--space-section);
+    padding-bottom: var(--space-20);
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+/* Atmospheric perspective overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse 120% 80% at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0.3) 70%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Volumetric lighting rays */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.02) 20%,
+        transparent 25%,
+        rgba(255, 255, 255, 0.01) 45%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.015) 70%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.008) 90%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+    animation: lightRays 20s ease-in-out infinite;
+}
+
+@keyframes lightRays {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+
+/* Distant Background Carousel - Diagonal strip in distance - longer and shifted left */
+.hero-distant-carousel {
+    position: absolute;
+    top: 20%;
+    left: -5%;
+    width: 180vw;
+    height: 6vh;
+    transform: rotateZ(25deg) rotateY(-45deg) rotateX(20deg) scale(0.35);
+    transform-origin: center;
+    z-index: -2;
+    opacity: 0.35;
+    filter: blur(0.8px) brightness(0.75);
+    border-radius: 0;
     overflow: hidden;
+    perspective: 2000px;
+}
+
+/* Background Carousel - Floating Film Strip */
+.hero-background-carousel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 20vh;
+    transform: translateX(-50%);
+    z-index: 0;
+    opacity: 0.75;
+    filter: blur(0.5px) brightness(0.8);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+/* Rim lighting for main carousel */
+.hero-background-carousel::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 10%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.1) 90%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 2px;
+    animation: rimGlow 8s ease-in-out infinite;
+}
+
+@keyframes rimGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 10px rgba(255, 255, 255, 0.1),
+            0 0 20px rgba(255, 255, 255, 0.05);
+    }
+    50% { 
+        box-shadow: 
+            0 0 15px rgba(255, 255, 255, 0.2),
+            0 0 30px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Distant carousel styling */
+
+/* Distant carousel styling */
+.hero-distant-carousel .carousel-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background: transparent;
+    margin-top: 0;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    /* Extended visibility on both sides, more on the right */
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.4) 8%,
+        rgba(0, 0, 0, 0.8) 18%,
+        rgba(0, 0, 0, 1) 35%,
+        rgba(0, 0, 0, 1) 75%,
+        rgba(0, 0, 0, 0.6) 88%,
+        rgba(0, 0, 0, 0.2) 95%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.4) 8%,
+        rgba(0, 0, 0, 0.8) 18%,
+        rgba(0, 0, 0, 1) 35%,
+        rgba(0, 0, 0, 1) 75%,
+        rgba(0, 0, 0, 0.6) 88%,
+        rgba(0, 0, 0, 0.2) 95%,
+        transparent 100%
+    );
+}
+
+/* Depth of field overlay for distant carousel */
+.hero-distant-carousel .carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse 80% 60% at center,
+        transparent 20%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0.2) 60%,
+        rgba(0, 0, 0, 0.3) 80%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero-background-carousel .carousel-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background: transparent;
+    margin-top: 0;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    /* Advanced edge blending with CSS masks */
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 5%,
+        rgba(0, 0, 0, 0.5) 12%,
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0.5) 88%,
+        rgba(0, 0, 0, 0.1) 95%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 5%,
+        rgba(0, 0, 0, 0.5) 12%,
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0.5) 88%,
+        rgba(0, 0, 0, 0.1) 95%,
+        transparent 100%
+    );
+}
+
+/* Subtle vignette overlay for natural focus */
+.hero-background-carousel .carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 30%,
+        rgba(0, 0, 0, 0.1) 70%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Cinematic frame removed for cleaner look */
+.hero-background-carousel::before {
+    display: none;
+}
+
+
+/* Distant carousel track - reverse direction (right to left) */
+.hero-distant-carousel .carousel-track {
+    height: 100%;
+    animation: continuousScroll 140s linear infinite reverse;
+    animation-delay: -70s; /* Start halfway through cycle to offset from main carousel */
+    /* Duplicate content for seamless looping */
+    width: 200%;
+    display: flex;
+}
+
+.hero-background-carousel .carousel-track {
+    height: 100%;
+    animation: continuousScroll 80s linear infinite;
+    /* Duplicate content for seamless looping */
+    width: 200%;
+}
+
+/* Distant carousel items - smaller and more compressed */
+.hero-distant-carousel .carousel-item {
+    height: 100%;
+    flex: 0 0 12vw;
+    margin-right: var(--space-1);
+    border-radius: 2px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+.hero-distant-carousel .carousel-item video,
+.hero-distant-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.hero-background-carousel .carousel-item {
+    height: 100%;
+    flex: 0 0 20vw;
+    margin-right: var(--space-4);
+    border-radius: 8px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+.hero-background-carousel .carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+    border-radius: 8px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-background-carousel .carousel-item video,
+.hero-background-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Stagger distant carousel videos differently - all 19 videos */
+.hero-distant-carousel .carousel-item:nth-child(1) video { animation-delay: -1s; }
+.hero-distant-carousel .carousel-item:nth-child(2) video { animation-delay: -2.5s; }
+.hero-distant-carousel .carousel-item:nth-child(3) video { animation-delay: -4s; }
+.hero-distant-carousel .carousel-item:nth-child(4) video { animation-delay: -0.7s; }
+.hero-distant-carousel .carousel-item:nth-child(5) video { animation-delay: -3.2s; }
+.hero-distant-carousel .carousel-item:nth-child(6) video { animation-delay: -1.8s; }
+.hero-distant-carousel .carousel-item:nth-child(7) video { animation-delay: -4.5s; }
+.hero-distant-carousel .carousel-item:nth-child(8) video { animation-delay: -2.1s; }
+.hero-distant-carousel .carousel-item:nth-child(9) video { animation-delay: -3.8s; }
+.hero-distant-carousel .carousel-item:nth-child(10) video { animation-delay: -0.4s; }
+.hero-distant-carousel .carousel-item:nth-child(11) video { animation-delay: -2.9s; }
+.hero-distant-carousel .carousel-item:nth-child(12) video { animation-delay: -4.2s; }
+.hero-distant-carousel .carousel-item:nth-child(13) video { animation-delay: -1.3s; }
+.hero-distant-carousel .carousel-item:nth-child(14) video { animation-delay: -3.6s; }
+.hero-distant-carousel .carousel-item:nth-child(15) video { animation-delay: -0.9s; }
+.hero-distant-carousel .carousel-item:nth-child(16) video { animation-delay: -2.4s; }
+.hero-distant-carousel .carousel-item:nth-child(17) video { animation-delay: -4.7s; }
+.hero-distant-carousel .carousel-item:nth-child(18) video { animation-delay: -1.6s; }
+.hero-distant-carousel .carousel-item:nth-child(19) video { animation-delay: -3.3s; }
+
+/* Stagger video start times to prevent synchronized looping */
+.hero-background-carousel .carousel-item:nth-child(1) video { animation-delay: -0s; }
+.hero-background-carousel .carousel-item:nth-child(2) video { animation-delay: -0.5s; }
+.hero-background-carousel .carousel-item:nth-child(3) video { animation-delay: -1s; }
+.hero-background-carousel .carousel-item:nth-child(4) video { animation-delay: -1.5s; }
+.hero-background-carousel .carousel-item:nth-child(5) video { animation-delay: -2s; }
+.hero-background-carousel .carousel-item:nth-child(6) video { animation-delay: -2.5s; }
+.hero-background-carousel .carousel-item:nth-child(7) video { animation-delay: -3s; }
+.hero-background-carousel .carousel-item:nth-child(8) video { animation-delay: -3.5s; }
+.hero-background-carousel .carousel-item:nth-child(9) video { animation-delay: -4s; }
+.hero-background-carousel .carousel-item:nth-child(10) video { animation-delay: -4.5s; }
+.hero-background-carousel .carousel-item:nth-child(11) video { animation-delay: -0.2s; }
+.hero-background-carousel .carousel-item:nth-child(12) video { animation-delay: -0.7s; }
+.hero-background-carousel .carousel-item:nth-child(13) video { animation-delay: -1.2s; }
+.hero-background-carousel .carousel-item:nth-child(14) video { animation-delay: -1.7s; }
+.hero-background-carousel .carousel-item:nth-child(15) video { animation-delay: -2.2s; }
+.hero-background-carousel .carousel-item:nth-child(16) video { animation-delay: -2.7s; }
+.hero-background-carousel .carousel-item:nth-child(17) video { animation-delay: -3.2s; }
+.hero-background-carousel .carousel-item:nth-child(18) video { animation-delay: -3.7s; }
+.hero-background-carousel .carousel-item:nth-child(19) video { animation-delay: -4.2s; }
+.hero-background-carousel .carousel-item:nth-child(20) video { animation-delay: -4.7s; }
+.hero-background-carousel .carousel-item:nth-child(21) video { animation-delay: -0.3s; }
+.hero-background-carousel .carousel-item:nth-child(22) video { animation-delay: -0.8s; }
+.hero-background-carousel .carousel-item:nth-child(23) video { animation-delay: -1.3s; }
+.hero-background-carousel .carousel-item:nth-child(24) video { animation-delay: -1.8s; }
+.hero-background-carousel .carousel-item:nth-child(25) video { animation-delay: -2.3s; }
+.hero-background-carousel .carousel-item:nth-child(26) video { animation-delay: -2.8s; }
+.hero-background-carousel .carousel-item:nth-child(27) video { animation-delay: -3.3s; }
+
+/* Removed film perforations for cleaner appearance */
+
+/* Technical measurement lines removed for cleaner look */
+
+/* Removed complex animations for cleaner, stable appearance */
+
+
+/* Content Overlay */
+.hero-content-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-content {
@@ -28,6 +411,10 @@
     margin-bottom: var(--space-8);
     color: var(--color-text-primary);
     text-transform: uppercase !important;
+    text-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(0, 0, 0, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.9);
     word-spacing: var(--hero-title-word-spacing) !important;
     font-family: 'Inter', sans-serif !important;
 }
@@ -44,6 +431,9 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 
+        0 0 15px rgba(0, 0, 0, 0.7),
+        1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle::before {
@@ -73,6 +463,9 @@
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    text-shadow: 
+        0 0 12px rgba(0, 0, 0, 0.6),
+        1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .hero-actions {
@@ -150,6 +543,71 @@
         flex-direction: column;
         align-items: center;
         gap: var(--space-4);
+    }
+    
+    /* Mobile Frame Optimization */
+    .hero-background-carousel::before {
+        border-width: 1.5px;
+        border-radius: 18px;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+    }
+    
+    .hero-background-carousel::after {
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 20px;
+        background-size: 20px 20px;
+    }
+    
+    .hero-background-carousel .carousel-track::before,
+    .hero-background-carousel .carousel-track::after {
+        width: 8px;
+        left: -12px;
+        right: -12px;
+    }
+    
+    .hero-background-carousel .carousel-container::before,
+    .hero-background-carousel .carousel-container::after {
+        background-size: 20px 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens - minimal frame */
+    .hero-background-carousel::before {
+        border-width: 1px;
+        border-radius: 16px;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+    }
+    
+    .hero-background-carousel::after {
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        border-radius: 18px;
+        background-size: 15px 15px;
+    }
+    
+    .hero-background-carousel .carousel-track::before,
+    .hero-background-carousel .carousel-track::after {
+        width: 6px;
+        left: -9px;
+        right: -9px;
+    }
+    
+    .hero-background-carousel .carousel-container::before,
+    .hero-background-carousel .carousel-container::after {
+        height: 1.5px;
+        background-size: 16px 1.5px;
     }
 }
 
