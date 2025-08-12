@@ -2,7 +2,7 @@
 
 /* Selected Work Section - Full-screen video displays */
 .selected-work {
-    padding: var(--space-16) 0 0 0;
+    padding: var(--space-6) 0 0 0;
     background: transparent;
     position: relative;
     z-index: 1;
@@ -81,7 +81,7 @@
 
 .work-video-container {
     width: 100%;
-    height: 70vh;
+    height: 90vh;
     position: relative;
     overflow: hidden;
     background: var(--color-gray-900);
@@ -90,6 +90,7 @@
         0 20px 40px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.05);
     border-radius: 2px;
+    cursor: pointer;
 }
 
 /* Add subtle connecting element between title and video */
@@ -147,11 +148,65 @@
     display: none;
 }
 
-@media (min-width: 768px) {
+/* Video Play Overlay - Match AI Video Style */
+.video-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    transition: all var(--duration-normal) var(--ease-out);
+    z-index: 10;
+    opacity: 1;
+}
+
+.work-video-container:hover .video-play-overlay {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.video-play-button {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.video-play-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: white;
+    transform: scale(1.1);
+}
+
+.video-play-button svg {
+    color: white;
+    margin-left: 4px;
+}
+
+/* Hide overlay when video is playing */
+.work-video-container.playing .video-play-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
     .work-video-container {
-        height: 80vh;
+        height: 70vh;
     }
-    
+}
+
+@media (min-width: 768px) {
     .work-title {
         font-size: var(--text-3xl);
         margin-bottom: var(--space-8);
@@ -159,10 +214,6 @@
 }
 
 @media (min-width: 1280px) {
-    .work-video-container {
-        height: 90vh;
-    }
-    
     .work-title {
         font-size: var(--text-4xl);
     }
@@ -427,7 +478,7 @@
 
 /* About Preview */
 .about-preview {
-    padding: var(--space-section) 0;
+    padding: var(--space-4) 0;
     background: var(--color-gray-900);
     position: relative;
     z-index: 10;
@@ -435,93 +486,9 @@
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-16);
-    align-items: center;
+    text-align: center;
 }
 
-@media (min-width: 768px) {
-    .about-content {
-        grid-template-columns: 1fr 400px;
-    }
-}
-
-.about-text {
-    order: 2;
-}
-
-@media (min-width: 768px) {
-    .about-text {
-        order: 1;
-    }
-}
-
-.about-bio {
-    margin-bottom: var(--space-8);
-}
-
-.about-bio p {
-    margin-bottom: var(--space-4);
-    font-size: var(--text-lg);
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-}
-
-.about-bio p:last-child {
-    margin-bottom: 0;
-}
-
-.about-bio strong {
-    color: var(--color-text-primary);
-    font-weight: 600;
-}
-
-.about-actions {
-    margin-top: var(--space-8);
-}
-
-.about-media {
-    order: 1;
-}
-
-@media (min-width: 768px) {
-    .about-media {
-        order: 2;
-    }
-}
-
-.about-image-placeholder {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: linear-gradient(135deg, var(--color-gray-800), var(--color-gray-700));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-muted);
-    font-size: var(--text-lg);
-}
-
-.about-image {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    transition: transform var(--duration-normal) var(--ease-out);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    position: relative;
-}
-
-/* Apply subtle cinematic frame to about image */
-.about-media {
-    position: relative;
-}
-
-.about-image:hover {
-    transform: scale(1.02);
-}
 
 /* Responsive adjustments */
 @media (max-width: 719px) {

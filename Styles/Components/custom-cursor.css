@@ -1,0 +1,299 @@
+/* Custom Red Triangle Cursor */
+
+/* Hide default cursor completely - comprehensive approach */
+*, 
+*:before, 
+*:after,
+html,
+body,
+a,
+button,
+input,
+textarea,
+select,
+div,
+span,
+p,
+h1, h2, h3, h4, h5, h6,
+img,
+svg,
+canvas,
+iframe,
+.btn,
+.nav-link,
+.social-link,
+.hero-actions,
+.footer,
+.header,
+[role="button"],
+[tabindex],
+[onclick] {
+    cursor: none !important;
+}
+
+/* Override any potential cursor styles from frameworks or libraries */
+html * {
+    cursor: none !important;
+}
+
+/* Force hide cursor on all interactive elements */
+a:hover,
+button:hover,
+.btn:hover,
+.nav-link:hover,
+.social-link:hover,
+input:focus,
+textarea:focus,
+select:focus,
+[role="button"]:hover,
+.clickable:hover {
+    cursor: none !important;
+}
+
+/* Custom cursor container */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 17px;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}
+
+/* Triangle cursor (matching logo) */
+.custom-cursor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 17px solid var(--color-accent);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Cursor states */
+.custom-cursor.clicking {
+    animation: cursorVibrate 0.15s ease-in-out;
+}
+
+.custom-cursor.hovering {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.custom-cursor.hovering::before {
+    border-bottom-color: rgba(220, 38, 38, 1);
+}
+
+/* Vibration animation */
+@keyframes cursorVibrate {
+    0%, 100% { 
+        transform: translate(-50%, -50%) rotate(0deg); 
+    }
+    10% { 
+        transform: translate(-50%, -50%) rotate(2deg) translateX(1px); 
+    }
+    20% { 
+        transform: translate(-50%, -50%) rotate(-2deg) translateX(-1px); 
+    }
+    30% { 
+        transform: translate(-50%, -50%) rotate(1deg) translateY(1px); 
+    }
+    40% { 
+        transform: translate(-50%, -50%) rotate(-1deg) translateY(-1px); 
+    }
+    50% { 
+        transform: translate(-50%, -50%) rotate(1deg) translateX(1px); 
+    }
+    60% { 
+        transform: translate(-50%, -50%) rotate(-1deg) translateX(-1px); 
+    }
+    70% { 
+        transform: translate(-50%, -50%) rotate(2deg) translateY(1px); 
+    }
+    80% { 
+        transform: translate(-50%, -50%) rotate(-2deg) translateY(-1px); 
+    }
+    90% { 
+        transform: translate(-50%, -50%) rotate(1deg) translateX(1px); 
+    }
+}
+
+/* Enhanced vibration for different click types */
+.custom-cursor.strong-click {
+    animation: cursorStrongVibrate 0.25s ease-in-out;
+}
+
+@keyframes cursorStrongVibrate {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+    }
+    5% { 
+        transform: translate(-50%, -50%) scale(1.1) rotate(3deg) translateX(2px); 
+    }
+    15% { 
+        transform: translate(-50%, -50%) scale(0.95) rotate(-3deg) translateX(-2px); 
+    }
+    25% { 
+        transform: translate(-50%, -50%) scale(1.05) rotate(2deg) translateY(2px); 
+    }
+    35% { 
+        transform: translate(-50%, -50%) scale(0.9) rotate(-2deg) translateY(-2px); 
+    }
+    45% { 
+        transform: translate(-50%, -50%) scale(1.1) rotate(3deg) translateX(1px); 
+    }
+    55% { 
+        transform: translate(-50%, -50%) scale(0.95) rotate(-3deg) translateX(-1px); 
+    }
+    65% { 
+        transform: translate(-50%, -50%) scale(1.05) rotate(2deg) translateY(1px); 
+    }
+    75% { 
+        transform: translate(-50%, -50%) scale(0.98) rotate(-1deg) translateY(-1px); 
+    }
+    85% { 
+        transform: translate(-50%, -50%) scale(1.02) rotate(1deg); 
+    }
+    95% { 
+        transform: translate(-50%, -50%) scale(0.99) rotate(-0.5deg); 
+    }
+}
+
+/* Cursor trail effect */
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.cursor-trail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 14px solid rgba(255, 70, 70, 0.4);
+    animation: trailFade 0.3s ease-out forwards;
+}
+
+@keyframes trailFade {
+    0% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+}
+
+/* Override specific cursor pointer rules from other CSS files */
+.video-player__play-button,
+.video-player__controls button,
+.video-player__seek-bar,
+.video-player__volume-slider,
+.portfolio-item,
+.portfolio-nav button,
+.carousel-nav button,
+.ai-video-nav button,
+.btn,
+.btn:disabled,
+.scroll-indicator,
+button,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+    cursor: none !important;
+}
+
+/* Additional cursor hiding for edge cases */
+.custom-cursor * {
+    cursor: none !important;
+}
+
+/* Allow normal cursor on video controls */
+video::-webkit-media-controls,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-seek-bar,
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-fullscreen-button {
+    cursor: pointer !important;
+}
+
+/* Ensure cursor is hidden during all states */
+*:active,
+*:focus,
+*:visited,
+*:link,
+*:target {
+    cursor: none !important;
+}
+
+/* Cursor for text selection */
+.custom-cursor.text-select::before,
+.custom-cursor.text-select::after {
+    background: rgba(255, 70, 70, 0.7);
+    transform: skew(-18deg) rotate(45deg);
+    transform-origin: top;
+}
+
+/* Cursor for dragging */
+.custom-cursor.dragging {
+    transform: translate(-50%, -50%) scale(0.8) rotate(10deg);
+}
+
+.custom-cursor.dragging::before,
+.custom-cursor.dragging::after {
+    background: rgba(255, 70, 70, 0.9);
+    filter: drop-shadow(0 0 12px rgba(255, 70, 70, 0.6));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Disable custom cursor on touch devices */
+    .custom-cursor {
+        display: none;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+    .custom-cursor {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .cursor-trail {
+        display: none;
+    }
+    
+    .custom-cursor.clicking,
+    .custom-cursor.strong-click {
+        animation: none !important;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}

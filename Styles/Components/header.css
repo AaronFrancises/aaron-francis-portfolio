@@ -37,29 +37,21 @@
     position: relative;
 }
 
-/* Replace 'A' with upward-pointing triangle */
+/* Triangle logo */
 .logo-a {
-    display: inline-block;
-    position: relative;
     width: 0;
     height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 16px solid var(--color-text-primary);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 17px solid var(--color-text-primary);
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 2px;
     transform-origin: center;
     animation: triangleToPlayButton 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    vertical-align: baseline;
-    margin-right: 1px;
-    margin-left: -1px;
-    margin-bottom: 0px;
 }
 
-/* Hide the text content since we're using the triangle */
-.logo-a:before {
-    content: '';
-}
-
-/* Smooth triangle rotation with pulse effect */
+/* Triangle rotation with color change */
 @keyframes triangleToPlayButton {
     0%, 75% {
         transform: rotate(0deg) scale(1);
@@ -103,6 +95,7 @@
         filter: none;
     }
 }
+
 
 .nav-logo:hover {
     color: var(--color-text-secondary);

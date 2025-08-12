@@ -15,6 +15,9 @@
 @import url('./Components/buttons.css');
 @import url('./Components/portfolio.css');
 @import url('./Components/ai-video-showcase.css');
+@import url('./Components/ai-creation-section.css');
+@import url('./Components/cinematography-section.css');
+@import url('./Components/scroll-progress.css');
 @import url('./Components/carousel.css');
 @import url('./Components/cinematic-frame.css');
 @import url('./Components/forms.css');
@@ -22,6 +25,8 @@
 @import url('./Components/film-grain.css');
 @import url('./Components/floating-particles.css');
 @import url('./Components/scroll-animations.css');
+@import url('./Components/scroll-indicator.css');
+@import url('./Components/about-page.css');
 
 /* Utility Styles */
 @import url('./Utilities/accessibility.css');
@@ -31,9 +36,6 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    overflow-x: hidden;
-}
 
 /* Smooth scrolling for anchor links */
 @media (prefers-reduced-motion: no-preference) {

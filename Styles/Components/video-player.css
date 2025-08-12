@@ -56,26 +56,79 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    color: var(--color-gray-900);
-    font-size: 2rem;
     cursor: pointer;
     transition: all var(--duration-normal) var(--ease-out);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
 }
 
 .video-player__play-button:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.8);
+    border-color: var(--color-accent);
+    transform: scale(1.1);
+    box-shadow: 
+        0 0 30px rgba(255, 70, 70, 0.3),
+        0 0 60px rgba(255, 70, 70, 0.1);
 }
 
+/* Triangle play button - matches logo design */
 .video-player__play-button::before {
-    content: "▶";
-    margin-left: 4px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 35px solid var(--color-accent);
+    transform: rotate(90deg);
+    margin-left: 3px;
+    filter: drop-shadow(0 2px 8px rgba(255, 70, 70, 0.4));
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.video-player__play-button:hover::before {
+    border-bottom-color: rgba(255, 70, 70, 0.9);
+    filter: drop-shadow(0 0 15px rgba(255, 70, 70, 0.8));
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Animated ring around play button */
+.video-player__play-button::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--color-accent), transparent, var(--color-accent)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: subtract;
+    opacity: 0;
+    animation: pulseRing 2s ease-in-out infinite;
+    transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.video-player__play-button:hover::after {
+    opacity: 1;
+}
+
+@keyframes pulseRing {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
 }
 
 .video-player__controls {

@@ -1,7 +1,7 @@
 /* Form Components */
 
 .contact {
-    padding: var(--space-section) 0;
+    padding: var(--space-6) 0 var(--space-2) 0;
     background: var(--color-background);
 }
 
@@ -138,7 +138,7 @@
 .footer {
     background: var(--color-gray-900);
     border-top: 1px solid var(--color-border);
-    padding: var(--space-16) 0 var(--space-8) 0;
+    padding: var(--space-4) 0;
 }
 
 .footer-content {

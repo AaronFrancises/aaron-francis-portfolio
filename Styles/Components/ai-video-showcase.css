@@ -3,128 +3,39 @@
 .ai-video-showcase {
     position: relative;
     width: 100%;
-    height: 80vh;
     background: #000;
     overflow: hidden;
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-6);
 }
 
-/* Video carousel container */
-.ai-video-carousel-container {
+/* Simple video player container */
+.video-player-container {
     position: relative;
     width: 100%;
-    height: calc(100% - 50px);
-    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: #000;
 }
 
-/* Sliding carousel */
-.ai-video-carousel {
-    display: flex;
-    width: 500%; /* 5 slides × 100% each */
+/* Video wrapper */
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #000;
 }
 
-/* Individual video slides */
-.ai-video-slide {
-    width: 20%; /* 100% ÷ 5 slides = 20% each */
-    height: 100%;
-    position: relative;
-    flex-shrink: 0;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ai-video-slide video {
+.video-wrapper video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #000;
 }
 
-/* Greyed-out effect for non-active videos */
-.ai-video-slide:not(.active) video {
-    filter: grayscale(70%) brightness(0.4) contrast(0.8);
-    opacity: 0.6;
-}
 
-.ai-video-slide.active video {
-    filter: grayscale(0%) brightness(1) contrast(1);
-    opacity: 1;
-}
 
-/* Subtle overlay for non-active slides */
-.ai-video-slide:not(.active)::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ai-video-slide.active::before {
-    opacity: 0;
-}
-
-/* Hover effect for adjacent videos */
-.ai-video-slide:not(.active):hover video {
-    filter: grayscale(50%) brightness(0.6) contrast(0.9);
-    opacity: 0.8;
-    transform: scale(1.02);
-}
-
-.ai-video-slide:not(.active):hover::before {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-/* Add cursor pointer to non-active slides for interactivity hint */
-.ai-video-slide:not(.active) {
-    cursor: pointer;
-}
-
-/* Video overlay - positioned like BBC reference */
-.ai-video-overlay {
-    position: absolute;
-    top: 50%;
-    left: 60px;
-    transform: translateY(-50%);
-    max-width: 500px;
-    z-index: 2;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-}
-
-/* Show overlay only on active slide */
-.ai-video-slide.active .ai-video-overlay {
-    opacity: 1;
-}
-
-/* Carousel positions for each slide */
-.ai-video-carousel[data-active="0"] {
-    transform: translateX(0%);
-}
-
-.ai-video-carousel[data-active="1"] {
-    transform: translateX(-20%);
-}
-
-.ai-video-carousel[data-active="2"] {
-    transform: translateX(-40%);
-}
-
-.ai-video-carousel[data-active="3"] {
-    transform: translateX(-60%);
-}
-
-.ai-video-carousel[data-active="4"] {
-    transform: translateX(-80%);
-}
 
 .ai-video-icon {
     font-size: 48px;
@@ -151,19 +62,18 @@
         0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-/* Navigation bar with sliding underline - BBC style */
+/* Navigation bar with sliding underline - Netflix style */
 .ai-video-nav {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.85);
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 80px;
     padding: 0 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ai-video-nav::after {
@@ -181,14 +91,14 @@
 .ai-nav-btn {
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
     font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    padding: 15px 0;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    padding: 20px 0;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     font-family: inherit;
     white-space: nowrap;
@@ -196,11 +106,13 @@
 }
 
 .ai-nav-btn:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
 }
 
 .ai-nav-btn.active {
     color: rgba(255, 255, 255, 1);
+    font-weight: 500;
 }
 
 /* Responsive design */

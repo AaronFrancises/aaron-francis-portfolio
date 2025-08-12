@@ -1,0 +1,93 @@
+/* Scroll Indicator Component */
+
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.scroll-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: floatArrow 2.5s ease-in-out infinite;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.scroll-arrow svg {
+    color: rgba(255, 255, 255, 0.9);
+    animation: bounceArrow 2.5s ease-in-out infinite;
+}
+
+
+/* Animations */
+@keyframes floatArrow {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+    }
+}
+
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(3px);
+    }
+}
+
+
+/* Hover effects */
+.scroll-indicator:hover .scroll-arrow {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+}
+
+.scroll-indicator:hover .scroll-arrow svg {
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        margin-top: 15px;
+    }
+    
+    .scroll-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Hide scroll indicator when user starts scrolling */
+@media (prefers-reduced-motion: no-preference) {
+    .scroll-indicator.hidden {
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none;
+    }
+}

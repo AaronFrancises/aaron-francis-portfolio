@@ -13,40 +13,7 @@
     }
 }
 
-/* Mobile optimization for body scanlines */
-@media (max-width: 768px) {
-    body::before {
-        background: repeating-linear-gradient(
-            90deg,
-            transparent 0px,
-            transparent 30px,
-            rgba(255, 255, 255, 0.05) 31px,
-            rgba(255, 255, 255, 0.05) 32px,
-            transparent 33px,
-            transparent 60px,
-            rgba(255, 255, 255, 0.04) 61px,
-            rgba(255, 255, 255, 0.04) 62px
-        );
-        background-size: 150px 100%;
-        animation: scanlineMove1 20s linear infinite;
-    }
-    
-    body::after {
-        background: repeating-linear-gradient(
-            90deg,
-            transparent 0px,
-            transparent 40px,
-            rgba(255, 255, 255, 0.06) 41px,
-            rgba(255, 255, 255, 0.06) 43px,
-            transparent 44px,
-            transparent 80px,
-            rgba(255, 255, 255, 0.05) 81px,
-            rgba(255, 255, 255, 0.05) 83px
-        );
-        background-size: 200px 100%;
-        animation: scanlineMove2 25s linear infinite;
-    }
-}
+/* Scanlines disabled */
 
 /* Mobile optimization for additional scanlines */
 @media (max-width: 768px) {
