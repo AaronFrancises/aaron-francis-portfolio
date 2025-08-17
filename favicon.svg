@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background for better contrast -->
+  <rect width="32" height="32" fill="#0F0F0F"/>
+  
+  <!-- Sideways triangle (play button style) -->
+  <path d="M12 8L24 16L12 24V8Z" fill="#DC2626"/>
+  
+  <!-- Subtle glow effect -->
+  <path d="M12 8L24 16L12 24V8Z" fill="url(#playGlow)"/>
+  
+  <defs>
+    <!-- Gradient for the glow effect -->
+    <linearGradient id="playGlow" x1="12" y1="16" x2="24" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="rgba(220, 38, 38, 0.9)"/>
+      <stop offset="100%" stop-color="rgba(220, 38, 38, 0.7)"/>
+    </linearGradient>
+  </defs>
+</svg>

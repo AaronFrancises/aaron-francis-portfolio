@@ -1,13 +1,13 @@
 # Large Media Files (Keep repository lean)
-Content/
-*.mp4
-*.mov
-*.avi
-*.mkv
-*.webm
-*.m4v
-*.3gp
-*.wmv
+# Content/ - Portfolio needs videos, so including them
+# *.mp4
+# *.mov
+# *.avi
+# *.mkv
+# *.webm
+# *.m4v
+# *.3gp
+# *.wmv
 
 # Large Images (Keep only essential)
 *.tiff

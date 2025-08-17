@@ -55,9 +55,22 @@
     border-color: rgba(220, 38, 38, 0.4);
 }
 
-/* Hide on mobile */
+/* Hide on mobile for cleaner interface */
 @media (max-width: 768px) {
     .scroll-progress-container {
         display: none;
+    }
+}
+
+/* Show on tablets but make smaller */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .scroll-progress-dot {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .scroll-progress-container {
+        right: var(--space-4);
+        gap: var(--space-3);
     }
 }

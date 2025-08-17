@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^1.0.83",
+    "yoga-wasm": "^0.0.2"
+  }
+}

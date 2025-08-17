@@ -695,3 +695,21 @@
         transform: translateY(0);
     }
 }
+
+/* EMERGENCY MOBILE PERFORMANCE FIX - Hide heavy background carousels */
+@media (max-width: 768px) {
+    .hero-distant-carousel,
+    .hero-background-carousel {
+        display: none !important;
+    }
+    
+    /* Simplify hero background for mobile */
+    .hero::after {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(15, 15, 15, 0.4) 50%,
+            rgba(0, 0, 0, 0.2) 100%
+        );
+    }
+}

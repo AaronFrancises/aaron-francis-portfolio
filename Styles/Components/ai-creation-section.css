@@ -1,7 +1,7 @@
 /* AI Video Creation Section */
 
 .ai-creation-section {
-    padding: var(--space-24) 0 var(--space-32);
+    padding: var(--space-24) 0 var(--space-16);
     background: linear-gradient(180deg, 
         transparent 0%, 
         rgba(15, 15, 15, 0.3) 30%, 
@@ -248,6 +248,27 @@
     transition: all 0.8s ease-out 0.8s;
 }
 
+/* Video container matches the original video styling */
+.ai-creation-media .video-container {
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: all var(--duration-normal) var(--ease-out);
+    filter: contrast(1.1) saturate(1.1);
+    background: rgba(15, 15, 15, 0.8);
+    z-index: 10;
+    position: relative;
+}
+
+.ai-creation-media .video-container:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(220, 38, 38, 0.4),
+        0 0 40px rgba(220, 38, 38, 0.15);
+    filter: contrast(1.2) saturate(1.2) brightness(1.1);
+}
+
 .ai-creation-content.animate-in .ai-creation-media {
     opacity: 1;
     transform: translateX(0);
@@ -294,14 +315,24 @@
     position: relative;
 }
 
-.ai-creation-video:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(220, 38, 38, 0.4),
-        0 0 40px rgba(220, 38, 38, 0.15);
-    filter: contrast(1.2) saturate(1.2) brightness(1.1);
+/* Hide any video controls completely */
+.ai-creation-video::-webkit-media-controls {
+    display: none !important;
 }
+
+.ai-creation-video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+.ai-creation-video::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
+.ai-creation-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+}
+
+/* Video hover effects now handled by container */
 
 .ai-creation-media:hover {
     transform: translateX(-5px);
@@ -324,23 +355,70 @@
     }
 }
 
+/* Mobile Performance Optimization */
+@media (max-width: 768px) {
+    /* Reduce video effects on mobile for better performance */
+    .ai-creation-video {
+        filter: none;
+        transition: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .ai-creation-video:hover {
+        transform: none;
+        filter: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .ai-creation-media:hover {
+        transform: none;
+    }
+    
+    .ai-creation-media::before {
+        display: none;
+    }
+    
+    /* Simplify section background for mobile */
+    .ai-creation-section {
+        background: rgba(10, 10, 10, 0.3);
+    }
+    
+    .ai-creation-section::before {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .ai-creation-section {
-        padding: var(--space-12) 0;
+        padding: var(--space-8) 0;
+        margin-top: 0;
+    }
+    
+    .ai-creation-content {
+        gap: var(--space-6);
+        padding: 0 var(--space-4);
     }
     
     .ai-creation-title {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin-bottom: var(--space-6);
+        font-size: clamp(2rem, 6vw, 2.5rem);
+        margin-bottom: var(--space-4);
     }
     
     .ai-creation-description {
         font-size: var(--text-base);
         max-width: 100%;
+        line-height: 1.6;
     }
     
     .ai-creation-video {
-        height: 300px;
+        height: 250px;
+        max-width: 100%;
+        border-radius: var(--radius-md);
+    }
+    
+    /* Disable section number on mobile for cleaner look */
+    .ai-creation-section::after {
+        display: none;
     }
 }
 

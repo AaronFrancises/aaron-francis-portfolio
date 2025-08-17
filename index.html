@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230F0F0F'/><path d='M12 8L24 16L12 24V8Z' fill='%23DC2626'/></svg>">
+    
     <!-- Critical CSS will be inlined here -->
     <link rel="stylesheet" href="Styles/main.css">
 </head>
@@ -613,7 +617,7 @@
                     <p class="hero-subtitle">Cinematographer & Visual Storyteller</p>
                     <p class="hero-description">Creating visually driven narratives that connect emotionally, socially, and visually</p>
                     <div class="hero-actions">
-                        <a href="#work" class="btn btn-primary">View My Work</a>
+                        <a href="#ai-creation" class="btn btn-primary">View My Work</a>
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                     
@@ -645,17 +649,26 @@
                         </div>
                     </div>
                     <div class="ai-creation-media">
-                        <video class="ai-creation-video" 
-                               autoplay 
-                               muted 
-                               loop 
-                               playsinline 
-                               preload="auto"
-                               aria-label="AI-generated beauty video demonstration">
-                            <source src="Content/Aibeautyvideo/Skin serum.mov" type="video/quicktime">
-                            <source src="Content/Aibeautyvideo/Skin serum.mov" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="video-container">
+                            <div class="video-loading-overlay">
+                                <div class="loading-spinner"></div>
+                                <div class="loading-text">Loading AI Creation...</div>
+                            </div>
+                            <video class="ai-creation-video" 
+                                   autoplay 
+                                   muted 
+                                   loop 
+                                   playsinline 
+                                   preload="auto"
+                                   disablepictureinpicture
+                                   controlslist="nodownload nofullscreen noremoteplaybook"
+                                   poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjMzOCIgdmlld0JveD0iMCAwIDYwMCAzMzgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iMzM4IiBmaWxsPSIjMEYwRjBGIi8+CjxjaXJjbGUgY3g9IjMwMCIgY3k9IjE2OSIgcj0iMjQiIGZpbGw9IiNEQzI2MjYiIG9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNMjg1IDE2MEwyODUgMTc4TDMxMCAxNjlMMjg1IDE2MFoiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjciLz4KPHN2Zz4K"
+                                   aria-label="AI-generated beauty video demonstration">
+                                <source src="Content/Aibeautyvideo/Skin serum.mov" type="video/quicktime">
+                                <source src="Content/Aibeautyvideo/Skin serum.mov" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -666,17 +679,26 @@
             <div class="container">
                 <div class="cinematography-content">
                     <div class="cinematography-media">
-                        <video class="cinematography-video" 
-                               autoplay 
-                               muted 
-                               loop 
-                               playsinline 
-                               preload="auto"
-                               aria-label="Award-winning short film cinematography">
-                            <source src="Content/Shortfilm/Shortfilm video.mov" type="video/quicktime">
-                            <source src="Content/Shortfilm/Shortfilm video.mov" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="video-container">
+                            <div class="video-loading-overlay">
+                                <div class="loading-spinner"></div>
+                                <div class="loading-text">Loading Cinematography...</div>
+                            </div>
+                            <video class="cinematography-video" 
+                                   autoplay 
+                                   muted 
+                                   loop 
+                                   playsinline 
+                                   preload="auto"
+                                   disablepictureinpicture
+                                   controlslist="nodownload nofullscreen noremoteplaybook"
+                                   poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjMzOCIgdmlld0JveD0iMCAwIDYwMCAzMzgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iMzM4IiBmaWxsPSIjMEEwQTBGIi8+CjxyZWN0IHg9IjI3MCIgeT0iMTQ0IiB3aWR0aD0iNjAiIGhlaWdodD0iNTAiIHJ4PSI4IiBmaWxsPSIjREMyNjI2IiBvcGFjaXR5PSIwLjMiLz4KPHN2Zz4K"
+                                   aria-label="Award-winning short film cinematography">
+                                <source src="Content/Shortfilm/Shortfilm video.mov" type="video/quicktime">
+                                <source src="Content/Shortfilm/Shortfilm video.mov" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                     <div class="cinematography-text">
                         <h2 class="cinematography-title">Framing Stories</h2>
@@ -857,6 +879,65 @@
                 window.addEventListener('scroll', updateScrollProgress);
                 updateScrollProgress(); // Initial call
                 
+                // Enhanced video loading with immediate feedback
+                const sectionVideos = document.querySelectorAll('.ai-creation-video, .cinematography-video');
+                sectionVideos.forEach(video => {
+                    const container = video.closest('.video-container');
+                    const overlay = container ? container.querySelector('.video-loading-overlay') : null;
+                    
+                    // Remove any default controls
+                    video.removeAttribute('controls');
+                    // Ensure they autoplay, are muted, and loop
+                    video.setAttribute('autoplay', '');
+                    video.setAttribute('muted', '');
+                    video.setAttribute('loop', '');
+                    video.setAttribute('playsinline', '');
+                    
+                    // Hide loading overlay when video is ready to play
+                    video.addEventListener('loadeddata', () => {
+                        if (overlay) {
+                            overlay.classList.add('hidden');
+                            setTimeout(() => overlay.style.display = 'none', 500);
+                        }
+                        
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(() => {
+                                setTimeout(() => video.play(), 100);
+                            });
+                        }
+                    });
+                    
+                    // Also hide overlay when video starts playing
+                    video.addEventListener('play', () => {
+                        if (overlay) {
+                            overlay.classList.add('hidden');
+                            setTimeout(() => overlay.style.display = 'none', 500);
+                        }
+                    });
+                    
+                    // Fallback: hide overlay after 10 seconds even if video doesn't load
+                    setTimeout(() => {
+                        if (overlay && !overlay.classList.contains('hidden')) {
+                            overlay.classList.add('hidden');
+                            setTimeout(() => overlay.style.display = 'none', 500);
+                        }
+                    }, 10000);
+                });
+                
+                // Aggressive preloading - start downloading videos immediately
+                window.addEventListener('load', () => {
+                    const allVideos = document.querySelectorAll('.ai-creation-video, .cinematography-video');
+                    allVideos.forEach(video => {
+                        // Force immediate loading
+                        video.load();
+                        // Set lower playback quality for faster loading if supported
+                        if (video.videoTracks && video.videoTracks.length > 0) {
+                            video.videoTracks[0].selected = true;
+                        }
+                    });
+                });
+                
                 // Function to switch to showreel
                 window.switchToShowreel = function() {
                     // Scroll to work section first
@@ -872,7 +953,7 @@
                 }
                 if (scrollIndicator) {
                     scrollIndicator.addEventListener('click', function() {
-                        document.querySelector('#work').scrollIntoView({
+                        document.querySelector('#ai-creation').scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
                         });
@@ -1198,7 +1279,10 @@
                 window.location.hash = '';
             }
             
-            new CinematicParticles();
+            // Only initialize particles on desktop for performance
+            if (window.innerWidth > 768) {
+                new CinematicParticles();
+            }
         });
         
         

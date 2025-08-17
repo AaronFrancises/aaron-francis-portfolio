@@ -1,7 +1,7 @@
 /* Cinematography Section */
 
 .cinematography-section {
-    padding: var(--space-32) 0 var(--space-24);
+    padding: var(--space-16) 0 var(--space-24);
     background: linear-gradient(180deg, 
         transparent 0%, 
         rgba(10, 10, 15, 0.4) 30%, 
@@ -10,7 +10,7 @@
     );
     position: relative;
     overflow: hidden;
-    margin-top: var(--space-16);
+    margin-top: 0;
 }
 
 .cinematography-section::before {
@@ -249,6 +249,27 @@
     transition: all 0.8s ease-out 0.8s;
 }
 
+/* Video container matches the original video styling */
+.cinematography-media .video-container {
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: all var(--duration-normal) var(--ease-out);
+    filter: contrast(1.1) saturate(1.1);
+    background: rgba(15, 15, 15, 0.8);
+    z-index: 10;
+    position: relative;
+}
+
+.cinematography-media .video-container:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(220, 38, 38, 0.4),
+        0 0 40px rgba(220, 38, 38, 0.15);
+    filter: contrast(1.2) saturate(1.2) brightness(1.1);
+}
+
 .cinematography-content.animate-in .cinematography-media {
     opacity: 1;
     transform: translateX(0);
@@ -295,14 +316,24 @@
     position: relative;
 }
 
-.cinematography-video:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(220, 38, 38, 0.4),
-        0 0 40px rgba(220, 38, 38, 0.15);
-    filter: contrast(1.2) saturate(1.2) brightness(1.1);
+/* Hide any video controls completely */
+.cinematography-video::-webkit-media-controls {
+    display: none !important;
 }
+
+.cinematography-video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+.cinematography-video::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
+.cinematography-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+}
+
+/* Video hover effects now handled by container */
 
 .cinematography-media:hover {
     transform: translateX(5px);
@@ -325,23 +356,70 @@
     }
 }
 
+/* Mobile Performance Optimization */
+@media (max-width: 768px) {
+    /* Reduce video effects on mobile for better performance */
+    .cinematography-video {
+        filter: none;
+        transition: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .cinematography-video:hover {
+        transform: none;
+        filter: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .cinematography-media:hover {
+        transform: none;
+    }
+    
+    .cinematography-media::before {
+        display: none;
+    }
+    
+    /* Simplify section background for mobile */
+    .cinematography-section {
+        background: rgba(5, 5, 10, 0.3);
+    }
+    
+    .cinematography-section::before {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .cinematography-section {
-        padding: var(--space-12) 0;
+        padding: var(--space-8) 0;
+        margin-top: 0;
+    }
+    
+    .cinematography-content {
+        gap: var(--space-6);
+        padding: 0 var(--space-4);
     }
     
     .cinematography-title {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin-bottom: var(--space-6);
+        font-size: clamp(2rem, 6vw, 2.5rem);
+        margin-bottom: var(--space-4);
     }
     
     .cinematography-description {
         font-size: var(--text-base);
         max-width: 100%;
+        line-height: 1.6;
     }
     
     .cinematography-video {
-        height: 300px;
+        height: 250px;
+        max-width: 100%;
+        border-radius: var(--radius-md);
+    }
+    
+    /* Disable section number on mobile for cleaner look */
+    .cinematography-section::after {
+        display: none;
     }
 }
 

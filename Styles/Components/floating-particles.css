@@ -182,29 +182,11 @@
     }
 }
 
-/* Responsive adjustments */
+/* Mobile performance optimization - disable particles */
 @media (max-width: 768px) {
-    .particle {
-        animation-duration: 12s !important;
-    }
-    
+    .floating-particles,
     .light-beam {
-        opacity: 0.2;
-    }
-    
-    .light-beam--1 {
-        width: 200px;
-        left: 5%;
-    }
-    
-    .light-beam--2 {
-        width: 150px;
-        right: 10%;
-    }
-    
-    .light-beam--3 {
-        width: 180px;
-        left: 50%;
+        display: none !important;
     }
 }
 
