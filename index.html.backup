@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aaron Francis - Award-winning cinematographer and visual storyteller with global perspective. Professional cinematography services for music videos, documentaries, and branded content.">
+    <title>Aaron Francis | Cinematographer & Visual Storyteller</title>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230F0F0F'/><path d='M12 8L24 16L12 24V8Z' fill='%23DC2626'/></svg>">
+    
+    <!-- Critical CSS will be inlined here -->
+    <link rel="stylesheet" href="Styles/main.css">
+</head>
+<body>
+    
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header / Navigation -->
+    <header class="header" role="banner">
+        <nav class="nav-primary" aria-label="Main navigation">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="#" class="nav-logo" aria-label="Aaron Francis, Cinematographer"><span class="logo-a"></span>FF</a>
+                </div>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="#work" class="nav-link" role="menuitem">Work</a></li>
+                    <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+                </ul>
+                <div class="nav-social">
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+
+    <!-- Scroll Progress Indicators -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-dot" data-section="hero" title="Hero"></div>
+        <div class="scroll-progress-dot" data-section="ai-creation" title="Beyond the Lens"></div>
+        <div class="scroll-progress-dot" data-section="cinematography" title="Framing Stories"></div>
+        <div class="scroll-progress-dot" data-section="work" title="Work"></div>
+        <div class="scroll-progress-dot" data-section="contact" title="Contact"></div>
+    </div>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero" aria-labelledby="hero-heading">
+            
+            <!-- Distant Background Carousel -->
+            <div class="hero-distant-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="distantCarousel">
+                        <!-- Randomized video order for distant carousel -->
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/flying saucer.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/miniature mushrooms.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Hands glowing.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Vista shot.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/fire bend.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Tiny man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/crystal.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/tall grass man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/portalal.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/flower.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Robo fly.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/falling leaf.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Climbing downman.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/water sphere.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/miniature forest cops.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Eyeball miniature.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Cream rotation.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Grass man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/johnluke_close-up_techno-organic_surreal_nurturing_dramatic_s_a8d7b979-f478-4474-b774-7e307971852a_2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <!-- Duplicate set for seamless looping - matches randomized order -->
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/flying saucer.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/miniature mushrooms.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Hands glowing.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Vista shot.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/fire bend.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Tiny man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/crystal.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/tall grass man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/portalal.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/flower.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Robo fly.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/falling leaf.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Climbing downman.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/water sphere.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/miniature forest cops.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Eyeball miniature.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Cream rotation.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Grass man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/johnluke_close-up_techno-organic_surreal_nurturing_dramatic_s_a8d7b979-f478-4474-b774-7e307971852a_2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Background Carousel -->
+            <div class="hero-background-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="visualCarousel">
+                        <!-- First set of all videos -->
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/balls.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/bird shot.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Climbing downman.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Cream rotation.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/crystal.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/DJ-mixing.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Eyeball.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Eyeball miniature.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/falling leaf.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/fire bend.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/flower.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/flying saucer.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Girl-with-projector.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Grass man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Hands glowing.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Iguana.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/johnluke_close-up_techno-organic_surreal_nurturing_dramatic_s_a8d7b979-f478-4474-b774-7e307971852a_2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/miniature forest cops.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/miniature mushrooms.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/portalal.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Robo fly.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/tall grass man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Telephone-box.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Tiny man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Tram.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Vista shot.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/water sphere.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <!-- Duplicate set for seamless looping -->
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/balls.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/bird shot.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Climbing downman.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Cream rotation.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/crystal.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/DJ-mixing.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Eyeball.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Eyeball miniature.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/falling leaf.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/fire bend.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/flower.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/flying saucer.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Girl-with-projector.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Grass man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Hands glowing.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Iguana.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/johnluke_close-up_techno-organic_surreal_nurturing_dramatic_s_a8d7b979-f478-4474-b774-7e307971852a_2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/miniature forest cops.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/miniature mushrooms.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/portalal.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Robo fly.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/tall grass man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Telephone-box.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Tiny man.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Tram.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/Vista shot.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="Content/Carousel/water sphere.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Content Overlay -->
+            <div class="hero-content-overlay">
+                <div class="hero-content">
+                    <h1 id="hero-heading" class="hero-title">Aaron Francis</h1>
+                    <p class="hero-subtitle">Cinematographer & Visual Storyteller</p>
+                    <p class="hero-description">Creating visually driven narratives that connect emotionally, socially, and visually</p>
+                    <div class="hero-actions">
+                        <a href="#ai-creation" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                    
+                    <!-- Scroll Indicator -->
+                    <div class="scroll-indicator" aria-label="Scroll down to view work">
+                        <div class="scroll-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Video Creation Section -->
+        <section id="ai-creation" class="ai-creation-section">
+            <div class="container">
+                <div class="ai-creation-content">
+                    <div class="ai-creation-text">
+                        <h2 class="ai-creation-title">Beyond the Lens</h2>
+                        <div class="ai-creation-description">
+                            <p>Combining camera work with creative technology, I use my experience as a <strong>cinematographer</strong> to craft visual stories that blend traditional filmmaking language with <strong>AI-powered tools</strong>.</p>
+                            <div class="ai-text-divider"></div>
+                            <p>Every frame is guided by the principles of light, composition, and rhythm I've developed behind the lens.</p>
+                        </div>
+                        <div class="ai-creation-actions">
+                            <a href="#work" class="btn btn-ai-work">See AI Work</a>
+                        </div>
+                    </div>
+                    <div class="ai-creation-media">
+                        <div class="video-container">
+                            <div class="video-loading-overlay">
+                                <div class="loading-spinner"></div>
+                                <div class="loading-text">Loading AI Creation...</div>
+                            </div>
+                            <video class="ai-creation-video" 
+                                   autoplay 
+                                   muted 
+                                   loop 
+                                   playsinline 
+                                   preload="auto"
+                                   disablepictureinpicture
+                                   controlslist="nodownload nofullscreen noremoteplaybook"
+                                   poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjMzOCIgdmlld0JveD0iMCAwIDYwMCAzMzgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iMzM4IiBmaWxsPSIjMEYwRjBGIi8+CjxjaXJjbGUgY3g9IjMwMCIgY3k9IjE2OSIgcj0iMjQiIGZpbGw9IiNEQzI2MjYiIG9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNMjg1IDE2MEwyODUgMTc4TDMxMCAxNjlMMjg1IDE2MFoiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjciLz4KPHN2Zz4K"
+                                   aria-label="AI-generated beauty video demonstration">
+                                <source src="Content/Aibeautyvideo/Skin serum.mov" type="video/quicktime">
+                                <source src="Content/Aibeautyvideo/Skin serum.mov" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cinematography Section -->
+        <section id="cinematography" class="cinematography-section">
+            <div class="container">
+                <div class="cinematography-content">
+                    <div class="cinematography-media">
+                        <div class="video-container">
+                            <div class="video-loading-overlay">
+                                <div class="loading-spinner"></div>
+                                <div class="loading-text">Loading Cinematography...</div>
+                            </div>
+                            <video class="cinematography-video" 
+                                   autoplay 
+                                   muted 
+                                   loop 
+                                   playsinline 
+                                   preload="auto"
+                                   disablepictureinpicture
+                                   controlslist="nodownload nofullscreen noremoteplaybook"
+                                   poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjMzOCIgdmlld0JveD0iMCAwIDYwMCAzMzgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iMzM4IiBmaWxsPSIjMEEwQTBGIi8+CjxyZWN0IHg9IjI3MCIgeT0iMTQ0IiB3aWR0aD0iNjAiIGhlaWdodD0iNTAiIHJ4PSI4IiBmaWxsPSIjREMyNjI2IiBvcGFjaXR5PSIwLjMiLz4KPHN2Zz4K"
+                                   aria-label="Award-winning short film cinematography">
+                                <source src="Content/Shortfilm/Shortfilm video.mov" type="video/quicktime">
+                                <source src="Content/Shortfilm/Shortfilm video.mov" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="cinematography-text">
+                        <h2 class="cinematography-title">Framing Stories</h2>
+                        <div class="cinematography-description">
+                            <p>My approach to <strong>cinematography</strong> is grounded in careful composition, using space and movement to support the story. That sensibility was recognized at the <strong>Wolverhampton Film Festival</strong>, where a short I shot received Best Short Film.</p>
+                        </div>
+                        <div class="cinematography-actions">
+                            <a href="#work" class="btn btn-cinematography-work" onclick="switchToShowreel()">View My Showreel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work Section -->
+        <section id="work" class="selected-work">
+            
+            <!-- Video Carousel -->
+            <section class="ai-video-showcase">
+                <!-- Navigation Tabs -->
+                <nav class="ai-video-nav">
+                    <button class="ai-nav-btn active" data-video="trailer" onclick="switchVideo('trailer')">Trailer</button>
+                    <button class="ai-nav-btn" data-video="showreel" onclick="switchVideo('showreel')">Showreel</button>
+                </nav>
+                
+                <div class="video-player-container">
+                    <div class="video-wrapper" id="trailer-video" style="display: block;">
+                        <video 
+                            controls 
+                            preload="metadata" 
+                            poster="Content/Thumbnails/Trailerthumbnail.png">
+                            <source src="Content/Ai%20carousel/Trailer.mp4" type="video/mp4">
+                            <p>Your browser doesn't support HTML video.</p>
+                        </video>
+                    </div>
+                    
+                    <div class="video-wrapper" id="showreel-video" style="display: none;">
+                        <video 
+                            controls 
+                            preload="metadata" 
+                            poster="Content/Thumbnails/Showreelthumbnail.png">
+                            <source src="Content/Ai%20carousel/Showreel.mp4" type="video/mp4">
+                            <p>Your browser doesn't support HTML video.</p>
+                        </video>
+                    </div>
+                </div>
+            </section>
+            
+            <script>
+            // Simple video switching functionality
+            function switchVideo(videoType) {
+                const buttons = document.querySelectorAll('.ai-nav-btn');
+                const trailerVideo = document.getElementById('trailer-video');
+                const showreelVideo = document.getElementById('showreel-video');
+                
+                // Update active button
+                buttons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.video === videoType);
+                });
+                
+                // Show/hide videos
+                if (videoType === 'trailer') {
+                    trailerVideo.style.display = 'block';
+                    showreelVideo.style.display = 'none';
+                } else if (videoType === 'showreel') {
+                    trailerVideo.style.display = 'none';
+                    showreelVideo.style.display = 'block';
+                }
+                
+                // Update sliding underline
+                updateSlidingLine();
+            }
+            
+            // Animate sliding line to active button
+            function updateSlidingLine() {
+                const nav = document.querySelector('.ai-video-nav');
+                const activeBtn = document.querySelector('.ai-nav-btn.active');
+                
+                if (!nav || !activeBtn) return;
+                
+                // Get button position relative to nav
+                const navRect = nav.getBoundingClientRect();
+                const btnRect = activeBtn.getBoundingClientRect();
+                
+                // Calculate position and width
+                const leftPosition = btnRect.left - navRect.left;
+                const btnWidth = btnRect.width;
+                
+                // Apply to pseudo-element via CSS custom properties
+                nav.style.setProperty('--line-left', leftPosition + 'px');
+                nav.style.setProperty('--line-width', btnWidth + 'px');
+            }
+            
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                // Set initial sliding line position
+                setTimeout(updateSlidingLine, 100);
+                console.log('Video carousel initialized');
+                
+                // Initialize scroll indicator
+                const scrollIndicator = document.querySelector('.scroll-indicator');
+                
+                // Initialize AI section animations
+                const aiSection = document.querySelector('.ai-creation-content');
+                if (aiSection) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('animate-in');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    });
+                    
+                    observer.observe(aiSection);
+                }
+                
+                // Initialize Cinematography section animations
+                const cinematographySection = document.querySelector('.cinematography-content');
+                if (cinematographySection) {
+                    const cinematographyObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('animate-in');
+                                cinematographyObserver.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    });
+                    
+                    cinematographyObserver.observe(cinematographySection);
+                }
+                
+                // Initialize scroll progress indicators
+                const progressDots = document.querySelectorAll('.scroll-progress-dot');
+                const sections = document.querySelectorAll('#hero, #ai-creation, #cinematography, #work, #contact');
+                
+                function updateScrollProgress() {
+                    const scrollPosition = window.scrollY + window.innerHeight / 2;
+                    let activeSection = null;
+                    
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionBottom = sectionTop + section.offsetHeight;
+                        
+                        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                            activeSection = section.id;
+                        }
+                    });
+                    
+                    progressDots.forEach(dot => {
+                        dot.classList.remove('active');
+                        if (dot.dataset.section === activeSection) {
+                            dot.classList.add('active');
+                        }
+                    });
+                }
+                
+                // Add click handlers to progress dots
+                progressDots.forEach(dot => {
+                    dot.addEventListener('click', function() {
+                        const targetSection = document.getElementById(this.dataset.section);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Update progress on scroll
+                window.addEventListener('scroll', updateScrollProgress);
+                updateScrollProgress(); // Initial call
+                
+                // Enhanced video loading with immediate feedback
+                const sectionVideos = document.querySelectorAll('.ai-creation-video, .cinematography-video');
+                sectionVideos.forEach(video => {
+                    const container = video.closest('.video-container');
+                    const overlay = container ? container.querySelector('.video-loading-overlay') : null;
+                    
+                    // Remove any default controls
+                    video.removeAttribute('controls');
+                    // Ensure they autoplay, are muted, and loop
+                    video.setAttribute('autoplay', '');
+                    video.setAttribute('muted', '');
+                    video.setAttribute('loop', '');
+                    video.setAttribute('playsinline', '');
+                    
+                    // Hide loading overlay when video is ready to play
+                    video.addEventListener('loadeddata', () => {
+                        if (overlay) {
+                            overlay.classList.add('hidden');
+                            setTimeout(() => overlay.style.display = 'none', 500);
+                        }
+                        
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(() => {
+                                setTimeout(() => video.play(), 100);
+                            });
+                        }
+                    });
+                    
+                    // Also hide overlay when video starts playing
+                    video.addEventListener('play', () => {
+                        if (overlay) {
+                            overlay.classList.add('hidden');
+                            setTimeout(() => overlay.style.display = 'none', 500);
+                        }
+                    });
+                    
+                    // Fallback: hide overlay after 10 seconds even if video doesn't load
+                    setTimeout(() => {
+                        if (overlay && !overlay.classList.contains('hidden')) {
+                            overlay.classList.add('hidden');
+                            setTimeout(() => overlay.style.display = 'none', 500);
+                        }
+                    }, 10000);
+                });
+                
+                // Aggressive preloading - start downloading videos immediately
+                window.addEventListener('load', () => {
+                    const allVideos = document.querySelectorAll('.ai-creation-video, .cinematography-video');
+                    allVideos.forEach(video => {
+                        // Force immediate loading
+                        video.load();
+                        // Set lower playback quality for faster loading if supported
+                        if (video.videoTracks && video.videoTracks.length > 0) {
+                            video.videoTracks[0].selected = true;
+                        }
+                    });
+                });
+                
+                // Function to switch to showreel
+                window.switchToShowreel = function() {
+                    // Scroll to work section first
+                    document.querySelector('#work').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // After scroll completes, switch to showreel
+                    setTimeout(() => {
+                        switchVideo('showreel');
+                    }, 800);
+                }
+                if (scrollIndicator) {
+                    scrollIndicator.addEventListener('click', function() {
+                        document.querySelector('#ai-creation').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    });
+                }
+            });
+            </script>
+            
+        </section>
+
+        <!-- About Preview Section -->
+        <section id="about" class="about-preview">
+            <div class="container">
+                <div class="about-content">
+                    <a href="about.html" class="btn btn-secondary">Learn About My Journey</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="contact-heading" class="section-title">Contact Me</h2>
+                    <p class="section-subtitle">Interested in working together? Fill out some info and I will be in touch shortly. I can't wait to hear from you!</p>
+                </header>
+
+                <div class="contact-content">
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group form-group--full">
+                            <label for="email" class="form-label">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group form-group--full">
+                            <label for="message" class="form-label">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p class="footer-text">&copy; 2025 Aaron Francis. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript - Inline to avoid CORS issues -->
+    <script>
+        console.log('Starting floating particles...');
+        
+        // Enhanced floating particles with bokeh depth effect
+        class CinematicParticles {
+            constructor() {
+                this.container = null;
+                this.particles = [];
+                this.bokehCircles = [];
+                this.init();
+            }
+            
+            init() {
+                this.createContainer();
+                this.createBokehBackground();
+                this.start();
+            }
+            
+            createContainer() {
+                this.container = document.createElement('div');
+                this.container.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100vh;
+                    pointer-events: none;
+                    z-index: -1;
+                    overflow: hidden;
+                `;
+                document.body.appendChild(this.container);
+                console.log('Cinematic particle container created');
+            }
+            
+            createBokehBackground() {
+                // Create more prominent bokeh circles distributed across scroll area
+                for (let i = 0; i < 15; i++) {
+                    this.createBokehCircle();
+                }
+                console.log('Enhanced bokeh background created');
+            }
+            
+            createBokehCircle() {
+                const bokeh = document.createElement('div');
+                const size = 40 + Math.random() * 120; // 40-160px - much larger
+                const x = Math.random() * 100;
+                const y = Math.random() * 500; // Distribute across full height
+                const opacity = 0.15 + Math.random() * 0.35; // 0.15-0.5 - more visible
+                const hue = 180 + Math.random() * 80; // Cooler blue tones
+                const animationDuration = 15 + Math.random() * 25; // 15-40s
+                
+                // Random starting point in the animation (0-100%)
+                const animationStartPoint = Math.random() * 100;
+                
+                bokeh.style.cssText = `
+                    position: absolute;
+                    left: ${x}%;
+                    top: ${y}vh;
+                    width: ${size}px;
+                    height: ${size}px;
+                    border-radius: 50%;
+                    background: radial-gradient(circle, 
+                        hsla(${hue}, 40%, 85%, ${opacity}) 0%, 
+                        hsla(${hue}, 35%, 75%, ${opacity * 0.7}) 30%, 
+                        hsla(${hue}, 30%, 65%, ${opacity * 0.4}) 60%, 
+                        transparent 80%
+                    );
+                    filter: blur(4px);
+                    box-shadow: 0 0 ${size * 0.5}px hsla(${hue}, 50%, 80%, ${opacity * 0.3});
+                    animation: bokehDriftUp ${animationDuration}s linear infinite;
+                    animation-delay: -${animationStartPoint / 100 * animationDuration}s;
+                `;
+                
+                this.container.appendChild(bokeh);
+            }
+            
+            createParticle() {
+                const particle = document.createElement('div');
+                
+                // Create different types of particles for depth
+                const particleType = Math.random();
+                let size, opacity, blur, zIndex, animationType;
+                
+                if (particleType < 0.4) {
+                    // Close particles - sharp and bright
+                    size = 3 + Math.random() * 4; // 3-7px
+                    opacity = 0.7 + Math.random() * 0.3; // 0.7-1.0
+                    blur = 0;
+                    zIndex = 5;
+                    animationType = 'floatUpClose';
+                } else if (particleType < 0.7) {
+                    // Mid-distance particles
+                    size = 5 + Math.random() * 6; // 5-11px
+                    opacity = 0.4 + Math.random() * 0.4; // 0.4-0.8
+                    blur = 1;
+                    zIndex = 3;
+                    animationType = 'floatUpMid';
+                } else {
+                    // Far particles - larger and blurrier (out of focus)
+                    size = 8 + Math.random() * 12; // 8-20px
+                    opacity = 0.2 + Math.random() * 0.3; // 0.2-0.5
+                    blur = 3;
+                    zIndex = 1;
+                    animationType = 'floatUpFar';
+                }
+                
+                const x = Math.random() * 100;
+                const y = Math.random() * 500; // Position anywhere in the scroll area
+                const duration = 12 + Math.random() * 16; // 12-28s
+                const drift = -20 + Math.random() * 40; // -20 to 20px horizontal drift
+                
+                particle.style.cssText = `
+                    position: absolute;
+                    left: ${x}%;
+                    top: ${y}vh;
+                    width: ${size}px;
+                    height: ${size}px;
+                    background: radial-gradient(circle, 
+                        rgba(255,255,255,${opacity}) 0%, 
+                        rgba(255,255,255,${opacity * 0.6}) 40%, 
+                        transparent 70%
+                    );
+                    border-radius: 50%;
+                    filter: blur(${blur}px);
+                    z-index: ${zIndex};
+                    animation: ${animationType} ${duration}s ease-out infinite;
+                    --drift: ${drift}px;
+                `;
+                
+                this.container.appendChild(particle);
+                console.log(`Created ${particleType < 0.4 ? 'close' : particleType < 0.7 ? 'mid' : 'far'} particle`);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, duration * 1000);
+            }
+            
+            start() {
+                // Pre-populate the entire scroll area with particles
+                this.populateInitialParticles();
+                
+                // Continue creating particles for movement
+                setInterval(() => {
+                    this.createParticle();
+                }, 2000);
+            }
+            
+            populateInitialParticles() {
+                // Fill the screen immediately with particles
+                for (let i = 0; i < 25; i++) {
+                    this.createParticle();
+                }
+                console.log('Initial particles populated');
+            }
+        }
+        
+        // Add CSS animations for depth effect
+        const style = document.createElement('style');
+        style.textContent = `
+            /* Close particles - sharp, fast, bright */
+            @keyframes floatUpClose {
+                0% {
+                    transform: translateY(0) translateX(0) scale(0.5);
+                    opacity: 0;
+                }
+                15% {
+                    opacity: 1;
+                    transform: translateY(-15vh) translateX(calc(var(--drift) * 0.2)) scale(1);
+                }
+                85% {
+                    opacity: 0.8;
+                    transform: translateY(-85vh) translateX(calc(var(--drift) * 0.8)) scale(1);
+                }
+                100% {
+                    transform: translateY(-110vh) translateX(var(--drift)) scale(0.8);
+                    opacity: 0;
+                }
+            }
+            
+            /* Mid-distance particles - medium blur, medium speed */
+            @keyframes floatUpMid {
+                0% {
+                    transform: translateY(0) translateX(0) scale(0.6);
+                    opacity: 0;
+                }
+                20% {
+                    opacity: 0.8;
+                    transform: translateY(-20vh) translateX(calc(var(--drift) * 0.3)) scale(1);
+                }
+                80% {
+                    opacity: 0.4;
+                    transform: translateY(-80vh) translateX(calc(var(--drift) * 0.7)) scale(1.1);
+                }
+                100% {
+                    transform: translateY(-110vh) translateX(var(--drift)) scale(0.9);
+                    opacity: 0;
+                }
+            }
+            
+            /* Far particles - very blurry, slow, large */
+            @keyframes floatUpFar {
+                0% {
+                    transform: translateY(0) translateX(0) scale(0.7);
+                    opacity: 0;
+                }
+                25% {
+                    opacity: 0.5;
+                    transform: translateY(-25vh) translateX(calc(var(--drift) * 0.4)) scale(1);
+                }
+                75% {
+                    opacity: 0.2;
+                    transform: translateY(-75vh) translateX(calc(var(--drift) * 0.6)) scale(1.2);
+                }
+                100% {
+                    transform: translateY(-110vh) translateX(var(--drift)) scale(1.1);
+                    opacity: 0;
+                }
+            }
+            
+            /* Bokeh circles drifting upward - always moving */
+            @keyframes bokehDriftUp {
+                0% {
+                    transform: translateY(20vh) translateX(0) scale(0.9);
+                    opacity: 0.4;
+                }
+                25% {
+                    opacity: 0.7;
+                    transform: translateY(-10vh) translateX(8px) scale(1.05);
+                }
+                50% {
+                    opacity: 0.8;
+                    transform: translateY(-40vh) translateX(-12px) scale(1.1);
+                }
+                75% {
+                    opacity: 0.6;
+                    transform: translateY(-70vh) translateX(5px) scale(0.95);
+                }
+                100% {
+                    transform: translateY(-120vh) translateX(-3px) scale(0.8);
+                    opacity: 0.2;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Start when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Prevent auto-scroll on page load
+            if (window.location.hash) {
+                window.location.hash = '';
+            }
+            
+            // Only initialize particles on desktop for performance
+            if (window.innerWidth > 768) {
+                new CinematicParticles();
+            }
+        });
+        
+        
+    </script>
+</body>
+</html>
